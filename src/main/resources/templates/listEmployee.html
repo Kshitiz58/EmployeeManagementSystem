@@ -35,6 +35,7 @@
 							<th>State</th>
 							<th>City</th>
 							<th>Action</th>
+							<th>Download List</th>
 						</tr>
 					</thead>
 
@@ -54,8 +55,12 @@
 									<input type="submit" value="Edit" class="btn btn-success">
 								</a>
 								<a th:href="@{/deleteEmployee(id=${e.id})}">
-									<input type="submit" value="Delete" class="btn btn-success">
+									<input type="submit" value="Delete" class="btn btn-danger">
 								</a>
+							</td>
+							<td>
+								<a href="#"> <input type="submit" value="Excel" class="btn btn-success"> </a>
+								<a href="#"> <input type="submit" value="Pdf" class="btn btn-primary"> </a>
 							</td>
 						</tr>
 

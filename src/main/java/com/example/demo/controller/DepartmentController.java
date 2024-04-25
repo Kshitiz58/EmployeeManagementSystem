@@ -46,5 +46,12 @@ public class DepartmentController {
 		return "redirect:/departmentList";
 	}
 	
+	@GetMapping("/deleteDepartment")
+	public String deleteDepartment(@RequestParam int id) {
+		
+		deptservice.deleteDepartment(id);
+		return "redirect:/departmentList";
+		
+	}
 
 }

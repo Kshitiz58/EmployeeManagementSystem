@@ -27,6 +27,7 @@
 							<th>Department Head(HOD)</th>
 							<th>Department Contact</th>
 							<th>Action</th>
+							<th>Download</th>
 						</tr>
 					</thead>
 
@@ -36,14 +37,18 @@
 							<td>[[${d.dpt_Name}]]</td>
 							<td>[[${d.dpt_Head}]]</td>
 							<td>[[${d.dpt_Phone}]]</td>
-							
+
 							<td>
 								<a th:href="@{/editDepartment(id=${d.id})}">
 									<input type="submit" value="Edit" class="btn btn-success">
 								</a>
-								<a>
-									<input type="submit" value="Delete" class="btn btn-success">
+								<a th:href="@{/deleteDepartment(id=${d.id})}">
+									<input type="submit" value="Delete" class="btn btn-danger">
 								</a>
+							</td>
+							<td>
+								<a href="#"> <input type="submit" value="Excel" class="btn btn-success"> </a>
+								<a href="#"> <input type="submit" value="Pdf" class="btn btn-primary"> </a>
 							</td>
 
 						</tr>
