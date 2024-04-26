@@ -7,9 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.Department;
 import com.example.demo.service.DepartmentService;
+import com.example.demo.utlis.DepartmentExcelView;
+import com.example.demo.utlis.DepartmentPdfView;
 
 @Controller
 public class DepartmentController {
@@ -52,6 +55,27 @@ public class DepartmentController {
 		deptservice.deleteDepartment(id);
 		return "redirect:/departmentList";
 		
+	}
+	
+	@GetMapping("departmentExcel")
+	public ModelAndView excelView() {
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("dlist", deptservice.getDepartments());
+		mv.setView(new DepartmentExcelView());
+		
+		return mv;
+		
+	}
+	
+	@GetMapping("departmentPdf")
+	public ModelAndView pdfView() {
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("dList", deptservice.getDepartments());
+		mv.setView(new DepartmentPdfView());
+		
+		return mv;
 	}
 
 }
