@@ -13,7 +13,7 @@ import com.example.demo.model.Employee;
 import com.example.demo.service.DepartmentService;
 import com.example.demo.service.EmployeeService;
 import com.example.demo.utlis.EmployeeExcelView;
-import com.example.demo.utlis.EmployeePdfView;
+//import com.example.demo.utlis.EmployeePdfView;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -91,7 +91,7 @@ public class EmployeeController {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("elist", empService.getAllEmp());
-//		mv.setView(new EmployeeExcelView());
+		mv.setView(new EmployeeExcelView());
 		
 		return mv;
 		

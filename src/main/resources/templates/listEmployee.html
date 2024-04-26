@@ -30,10 +30,9 @@
 							<th>Last Name</th>
 							<th>Gender</th>
 							<th>Phone</th>
-							<th>Department</th>
-							<th>Country</th>
-							<th>State</th>
-							<th>City</th>
+							<th>Email</th>
+							<th>Company</th>
+							<th>Salary</th>
 							<th>Action</th>
 							<th>Download List</th>
 						</tr>
@@ -46,10 +45,9 @@
 							<td>[[${e.lname}]]</td>
 							<td>[[${e.gender}]]</td>
 							<td>[[${e.phone}]]</td>
-							<td>[[${e.department.dpt_Name}]]</td>
-							<td>[[${e.address.country}]]</td>
-							<td>[[${e.address.state}]]</td>
-							<td>[[${e.address.city}]]</td>
+							<td>[[${e.email}]]</td>
+							<td>[[${e.company}]]</td>
+							<td>[[${e.salary}]]</td>
 							<td>
 								<a th:href="@{/editEmployee(id=${e.id})}">
 									<input type="submit" value="Edit" class="btn btn-success">
@@ -59,7 +57,7 @@
 								</a>
 							</td>
 							<td>
-								<a href="#"> <input type="submit" value="Excel" class="btn btn-success"> </a>
+								<a href="/EmployeeExcel"> <input type="submit" value="Excel" class="btn btn-success"> </a>
 								<a href="#"> <input type="submit" value="Pdf" class="btn btn-primary"> </a>
 							</td>
 						</tr>
