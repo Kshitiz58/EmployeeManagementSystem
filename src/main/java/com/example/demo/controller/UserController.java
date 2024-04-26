@@ -16,6 +16,7 @@ import com.example.demo.utlis.VerifyRecaptcha;
 
 import jakarta.servlet.http.HttpSession;
 
+
 @Controller
 public class UserController {
 
@@ -24,7 +25,7 @@ public class UserController {
 
 	@GetMapping({ "/", "/login" })
 	public String getlogin() {
-		return "loginForm";
+		return "login";
 	}
 
 	@PostMapping("/login")
@@ -34,18 +35,18 @@ public class UserController {
 			User usr = service.userLogin(user.getUsername(), user.getPassword());
 
 			if (usr != null) {
-				session.setAttribute("validateuser", usr);
+				session.setAttribute("validateUser", usr);
 				session.setMaxInactiveInterval(200);
 
 //			model.addAttribute("uname", user.getUsername());
-				return "index";
+				return "home";
 			} else {
 				model.addAttribute("message", "User not Exist!!");
-				return "loginForm";
+				return "login";
 			}
 		}
 		model.addAttribute("message","You are Robot!!");
-		return "loginForm";
+		return "login";
 
 	}
 
@@ -61,7 +62,7 @@ public class UserController {
 
 		service.userSignup(user);
 
-		return "loginForm";
+		return "login";
 
 	}
 	@GetMapping("/logout")
@@ -72,7 +73,10 @@ public class UserController {
 	}
 	
 	@GetMapping("/profile")
-	public String getPrrofile() {
+	public String getPrrofile(HttpSession session) {
+		if(session.getAttribute("validateUser") == null) {
+			return "login";
+		}
 		return "profile";
 	}
 

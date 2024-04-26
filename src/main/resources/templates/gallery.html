@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Gallery</title>
+</head>
+
+<body>
+
+	<div th:insert="header.html"></div>
+
+	<div class="container-fluid">
+
+		<div class="card">
+			<div class="card-header text-center text-white bg-primary">
+				<h5>Gallery</h5>
+			</div>
+			<div class="card-body">
+
+				<span th:each="imgName : ${imgList}">
+
+					<img class="p-2" th:src="@{'/image/'+${imgName}}" width="382" height="400">
+
+				</span>
+
+
+			</div>
+
+			<div class="card-footer bg-warning text-black text-center">&copy; 2024 Kshitiz Creation</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>
