@@ -13,7 +13,7 @@ import com.example.demo.model.Employee;
 import com.example.demo.service.DepartmentService;
 import com.example.demo.service.EmployeeService;
 import com.example.demo.utlis.EmployeeExcelView;
-//import com.example.demo.utlis.EmployeePdfView;
+import com.example.demo.utlis.EmployeePdfView;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -86,7 +86,7 @@ public class EmployeeController {
 		return "redirect:/employeeList";
 	}
 	
-	@GetMapping("EmployeeExcel")
+	@GetMapping("/EmployeeExcel")
 	public ModelAndView excelView() {
 		
 		ModelAndView mv = new ModelAndView();
@@ -97,12 +97,12 @@ public class EmployeeController {
 		
 	}
 	
-	@GetMapping("EmployeePdf")
+	@GetMapping("/EmployeePdf")
 	public ModelAndView pdfView() {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("eList", empService.getAllEmp());
-//		mv.setView(new EmployeePdfView());
+		mv.setView(new EmployeePdfView());
 		
 		return mv;
 	}

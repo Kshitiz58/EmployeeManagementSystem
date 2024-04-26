@@ -61,7 +61,7 @@ public class DepartmentPdfView extends AbstractPdfView {
 		Font tableHead = new Font(Font.TIMES_ROMAN, 12, Font.BOLD, Color.BLACK);
 		PdfPTable table = new PdfPTable(4);
 		table.setSpacingAfter(Element.ALIGN_CENTER);
-		table.addCell(new Phrase("ID", tableHead));
+		table.addCell(new Phrase("Id", tableHead));
 		table.addCell(new Phrase("Name", tableHead));
 		table.addCell(new Phrase("Head", tableHead));
 		table.addCell(new Phrase("Phone", tableHead));
