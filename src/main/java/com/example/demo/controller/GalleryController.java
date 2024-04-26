@@ -13,9 +13,9 @@ public class GalleryController {
 	@GetMapping("/gallery")
 	public String getGallery(Model model, HttpSession session) {
 
-		if (session.getAttribute("validateUser") == null) {
-			return "login";
-		}
+//		if (session.getAttribute("validateUser") == null) {
+//			return "login";
+//		}
 
 		String[] imgNameList = new File("src/main/resources/static/image").list();
 		model.addAttribute("imgList", imgNameList);

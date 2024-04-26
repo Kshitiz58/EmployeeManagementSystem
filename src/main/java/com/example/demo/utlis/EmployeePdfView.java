@@ -54,7 +54,7 @@ public class EmployeePdfView extends AbstractPdfView {
 		document.add(title);
 		
 		Font tableHead = new Font(Font.TIMES_ROMAN, 12, Font.BOLD, Color.BLACK);
-		PdfPTable table = new PdfPTable(7);
+		PdfPTable table = new PdfPTable(8);
 		table.setSpacingAfter(Element.ALIGN_CENTER);
 		table.addCell(new Phrase("Id", tableHead));
 		table.addCell(new Phrase("F Name", tableHead));
@@ -63,6 +63,7 @@ public class EmployeePdfView extends AbstractPdfView {
 		table.addCell(new Phrase("Phone", tableHead));
 		table.addCell(new Phrase("Email", tableHead));
 		table.addCell(new Phrase("Company", tableHead));
+		table.addCell(new Phrase("Post", tableHead));
 		
 		
 		for (Employee spec : list) {
@@ -73,6 +74,8 @@ public class EmployeePdfView extends AbstractPdfView {
 			table.addCell(spec.getPhone());
 			table.addCell(spec.getEmail());
 			table.addCell(spec.getCompany());
+			table.addCell(spec.getPost());
+			
 			
 			
 		}

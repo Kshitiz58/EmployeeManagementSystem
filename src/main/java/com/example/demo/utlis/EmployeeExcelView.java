@@ -40,7 +40,7 @@ public class EmployeeExcelView extends AbstractXlsView {
 		row.createCell(4).setCellValue("Phone");
 		row.createCell(5).setCellValue("Email");
 		row.createCell(6).setCellValue("Company");
-		row.createCell(7).setCellValue("Salary");
+		row.createCell(7).setCellValue("Post");
 		
 
 	}
@@ -55,7 +55,7 @@ public class EmployeeExcelView extends AbstractXlsView {
 			row.createCell(4).setCellValue(spec.getPhone());
 			row.createCell(5).setCellValue(spec.getEmail());
 			row.createCell(6).setCellValue(spec.getCompany());
-			row.createCell(7).setCellValue(spec.getSalary());
+			row.createCell(7).setCellValue(spec.getPost());
 		}
 		
 	}

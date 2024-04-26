@@ -36,7 +36,7 @@ public class UserController {
 
 			if (usr != null) {
 				session.setAttribute("validateUser", usr);
-				session.setMaxInactiveInterval(10000);
+				session.setMaxInactiveInterval(120);
 
 //			model.addAttribute("uname", user.getUsername());
 				return "home";
@@ -73,10 +73,10 @@ public class UserController {
 	}
 	
 	@GetMapping("/profile")
-	public String getPrrofile(HttpSession session) {
-		if(session.getAttribute("validateUser") == null) {
-			return "login";
-		}
+	public String getProfile(HttpSession session) {
+//		if(session.getAttribute("validateUser") == null) {
+//			return "login";
+//		}
 		return "profile";
 	}
 

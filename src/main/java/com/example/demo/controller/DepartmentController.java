@@ -24,35 +24,35 @@ public class DepartmentController {
 
 	@GetMapping("/department")
 	public String getDepartment(HttpSession session) {
-		if(session.getAttribute("validateUser") == null) {
-			return "login";
-		}
+//		if(session.getAttribute("validateUser") == null) {
+//			return "login";
+//		}
 		
 		return "addDepartment";
 	}
 
 	@PostMapping("/department")
 	public String postDepartment(@ModelAttribute Department dept, HttpSession session) {
-		if(session.getAttribute("validateUser") == null) {
-			return "login";
-		}
+//		if(session.getAttribute("validateUser") == null) {
+//			return "login";
+//		}
 		deptservice.addDepartment(dept);
 		return "addDepartment";
 	}
 	
 	@GetMapping("/departmentList")
 	public String listDepartment(Model model, HttpSession session) {
-		if(session.getAttribute("validateUser") == null) {
-			return "login";
-		}
+//		if(session.getAttribute("validateUser") == null) {
+//			return "login";
+//		}
 		model.addAttribute("deptList", deptservice.getDepartments());
 		return "listDepartment";
 	}
 	@GetMapping("/editDepartment")
 	public String editDepartment(@RequestParam int id, Model model, HttpSession session) {
-		if(session.getAttribute("validateUser") == null) {
-			return "login";
-		}
+//		if(session.getAttribute("validateUser") == null) {
+//			return "login";
+//		}
 		model.addAttribute("deptModel", deptservice.getDepartmentById(id));
 		return "editDepartment";
 		
@@ -60,18 +60,18 @@ public class DepartmentController {
 	
 	@PostMapping("/updateDepartment")
 	public String updateDepartment(@ModelAttribute Department department, HttpSession session) {
-		if(session.getAttribute("validateUser") == null) {
-			return "login";
-		}
+//		if(session.getAttribute("validateUser") == null) {
+//			return "login";
+//		}
 		deptservice.addDepartment(department);
 		return "redirect:/departmentList";
 	}
 	
 	@GetMapping("/deleteDepartment")
 	public String deleteDepartment(@RequestParam int id, HttpSession session) {
-		if(session.getAttribute("validateUser") == null) {
-			return "login";
-		}
+//		if(session.getAttribute("validateUser") == null) {
+//			return "login";
+//		}
 		deptservice.deleteDepartment(id);
 		return "redirect:/departmentList";
 		

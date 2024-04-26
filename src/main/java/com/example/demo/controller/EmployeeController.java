@@ -30,19 +30,19 @@ public class EmployeeController {
 	@GetMapping("/employee")
 	public String getEmployee(Model model, HttpSession session) {
 		
-		if(session.getAttribute("validateUser") == null) {
-			return "login";
-		}
-		
+//		if(session.getAttribute("validateUser") == null) {
+//			return "login";
+//		}
+//		
 		model.addAttribute("deptList", service.getDepartments());
 		return "addEmployee";
 	}
 	
 	@PostMapping("/employee")
 	public String postEmployee(@ModelAttribute Employee employee, HttpSession session) {
-		if(session.getAttribute("validateUser") == null) {
-			return "login";
-		}
+//		if(session.getAttribute("validateUser") == null) {
+//			return "login";
+//		}
 		empService.addEmployee(employee);
 		
 		return "redirect:/employee";
@@ -50,9 +50,9 @@ public class EmployeeController {
 	
 	@GetMapping("/employeeList")
 	public String listEmployee(Model model, HttpSession session) {
-		if(session.getAttribute("validateUser")== null){
-			return "login";
-		}
+//		if(session.getAttribute("validateUser")== null){
+//			return "login";
+//		}
 		
 		model.addAttribute("empList", empService.getAllEmp());
 		return "listEmployee";
@@ -60,18 +60,18 @@ public class EmployeeController {
 	
 	@GetMapping("/editEmployee")
 	public String editEmployee(@RequestParam long id, Model model, HttpSession session) {
-		if(session.getAttribute("validateUser") == null) {
-			return "login";
-		}
+//		if(session.getAttribute("validateUser") == null) {
+//			return "login";
+//		}
 		model.addAttribute("employeeModel", empService.getEmployeeByID(id));
 		return "editEmployee";
 	}
 	
 	@PostMapping("/updateEmployee")
 	public String updateEmployee(@ModelAttribute Employee employee, HttpSession session) {
-		if(session.getAttribute("validateUser") == null) {
-			return "login";
-		}
+//		if(session.getAttribute("validateUser") == null) {
+//			return "login";
+//		}
 		empService.addEmployee(employee);
 		return "redirect:/employeeList";
 	}
@@ -79,9 +79,9 @@ public class EmployeeController {
 
 	@GetMapping("/deleteEmployee")
 	public String deleteEmployee(@RequestParam Long id, HttpSession session) {
-		if(session.getAttribute("validateUser") == null) {
-			return "login";
-		}
+//		if(session.getAttribute("validateUser") == null) {
+//			return "login";
+//		}
 		empService.deleteEmployee(id);
 		return "redirect:/employeeList";
 	}
