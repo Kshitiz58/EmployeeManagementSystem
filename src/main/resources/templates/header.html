@@ -11,7 +11,7 @@
 <body>
 	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
 		<div class="container-fluid">
-			<a href="/index">
+			<a class="navbar-brand" href="/index">
 				<img class="header-logo-image" src="dist/images/logo.svg" alt="Logo">
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
@@ -38,12 +38,19 @@
 						<a class="nav-link" href="/gallery">Gallery</a>
 					</li>
 
+					<li class="nav-item">
+						<a class="nav-link" href="#">Upload</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#">Contact</a>
+					</li>
 				</ul>
 				<form class="d-flex" action="/logout">
-					<input class="form-control me-2" type="text" placeholder="Search">
+					<!--<input class="form-control me-2" type="text" placeholder="Search">-->
 					<!--<button class="btn btn-primary" type="button">Search</button>-->
-					
-					<button class="btn btn-danger" type="submit">Logout</button>
+					<p style="color: greenyellow"> Welcome:[[${session.validateUser.fname}]]
+						<button class="btn btn-danger" type="submit">Logout</button>
 				</form>
 			</div>
 		</div>
