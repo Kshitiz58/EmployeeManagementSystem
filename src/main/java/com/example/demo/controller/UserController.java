@@ -34,7 +34,7 @@ public class UserController {
 			User usr = service.userLogin(user.getUsername(), user.getPassword());
 
 			if (usr != null) {
-
+				session.setAttribute("validateuser", usr);
 				session.setMaxInactiveInterval(200);
 
 //			model.addAttribute("uname", user.getUsername());
@@ -64,5 +64,17 @@ public class UserController {
 		return "loginForm";
 
 	}
+	@GetMapping("/logout")
+	public String logoutUser(HttpSession session) {
+		//session kill
+		session.invalidate();
+		return "login";
+	}
+	
+	@GetMapping("/profile")
+	public String getPrrofile() {
+		return "profile";
+	}
 
+	
 }
