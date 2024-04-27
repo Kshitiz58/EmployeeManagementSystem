@@ -36,7 +36,7 @@ public class UserController {
 
 			if (usr != null) {
 				session.setAttribute("validateUser", usr);
-				session.setMaxInactiveInterval(120);
+				session.setMaxInactiveInterval(300);
 
 //			model.addAttribute("uname", user.getUsername());
 				return "home";

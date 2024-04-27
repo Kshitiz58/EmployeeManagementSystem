@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Upload File</title>
+</head>
+
+<body>
+	<div th:insert="header.html"></div>
+	<div class="container-fluid">
+		<div class="card">
+			<div class="card-header text-center text-white bg-primary">
+				<h5>Upload your File</h5>
+			</div>
+
+			<div class="card-body">
+
+				<form action="/upload" method="post" enctype="multipart/form-data">
+
+					<div class="row p-2">
+						<div class="col-4">
+							Select Image :
+						</div>
+						<div class="col-6">
+							<input type="file" name="image" class="form-control">
+						</div>
+					</div>
+
+
+					<div class="row p-2">
+						<div class="col-4">
+						</div>
+						<div class="col-6">
+							<input type="submit" value="Upload" class="btn btn-success">
+						</div>
+					</div>
+
+				</form>
+				<p>[[${message}]]</p>
+
+			</div>
+
+			<div class="card-footer bg-warning text-black text-center">&copy; 2024 Kshitiz Creation</div>
+
+		</div>
+
+	</div>
+
+
+</body>
+
+</html>
