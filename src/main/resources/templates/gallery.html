@@ -19,12 +19,10 @@
 			<div class="card-body">
 
 				<span th:each="imgName : ${imgList}">
-
-					<img class="p-2" th:src="@{'/image/'+${imgName}}" width="382" height="400">
-
+					<a href="@{'/image/'+${imgName}}">
+						<img th:src="@{'/image/'+${imgName}}" width="382" height="400" class="p-2">
+					</a>
 				</span>
-
-
 			</div>
 
 			<div class="card-footer bg-warning text-black text-center">&copy; 2024 Kshitiz Creation</div>
