@@ -42,7 +42,7 @@ body {
 
 .notfound .notfound-bg > div {
   width: 100%;
-  background: #fff;
+  background: lightskyblue;
   border-radius: 90px;
   height: 125px;
 }
@@ -76,7 +76,7 @@ body {
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 8px;
-  color: #151515;
+  color: darkblue;
 }
 
 .notfound h2 {
@@ -92,7 +92,7 @@ body {
   font-size: 14px;
   text-decoration: none;
   text-transform: uppercase;
-  background: #18e06f;
+  background:green;
   display: inline-block;
   padding: 15px 30px;
   border-radius: 5px;
