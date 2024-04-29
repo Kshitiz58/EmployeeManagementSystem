@@ -41,13 +41,12 @@ public class EmployeeRestController {
 	@PutMapping("/api/emp/update")
 	public String updateEmployee(@RequestBody Employee emp) {
 		empService.updateEmployee(emp);
-		return "EMployee Update Success!!";
+		return "Employee Update Success!!";
 	}
 	
 	@DeleteMapping("/api/emp/delete/{id}")
 	public String deleteEmployee(@PathVariable Long id) {
-		empService.deleteEmployee(id);
-		return "Employee Delete Success!!";
+		return empService.deleteEmployee(id);
 	}
 	
 	@GetMapping("/api/emp/j2o")

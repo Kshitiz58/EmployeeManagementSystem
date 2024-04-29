@@ -28,9 +28,13 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	@Override
-	public void deleteEmployee(Long id) {
-		empRepo.deleteById(id);
-		
+	public String deleteEmployee(Long id) {
+		if(empRepo.existsById(id)) {
+			empRepo.deleteById(id);
+			return "Employee Deleted Success.";
+		}else {
+			return "Employee Id not found.";
+		}
 	}
 
 	@Override
