@@ -33,7 +33,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 			empRepo.deleteById(id);
 			return "Employee Deleted Success.";
 		}else {
-			return "Employee Id not found.";
+			return "Employee Unavailable.";
 		}
 	}
 

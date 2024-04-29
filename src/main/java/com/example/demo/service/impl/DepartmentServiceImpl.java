@@ -35,8 +35,14 @@ public class DepartmentServiceImpl implements DepartmentService{
 	}
 
 	@Override
-	public void deleteDepartment(int id) {
+	public String deleteDepartment(int id) {
+		if(deptRepo.existsById(id)) {
 			deptRepo.deleteById(id);
+			return "Department Deleted Success.";
+		}else {
+			return "Department Unavailable.";
+		}
+			
 	}
 
 	@Override

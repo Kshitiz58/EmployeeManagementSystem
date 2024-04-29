@@ -52,16 +52,16 @@ public class EmployeeRestController {
 	@GetMapping("/api/emp/j2o")
 	public String JsonToOnject(Model model) {
 		RestTemplate temp = new RestTemplate();
-		Employee e = temp.getForObject("http://localhost:9090/api/emp/2", Employee.class);
-		return "FirstName ="+e.getFname();
+		Employee emp = temp.getForObject("http://localhost:9090/api/emp/2", Employee.class);
+		return "First Name : "+emp.getFname();
 	}
 	
 	@GetMapping("/api/emp/ja2oa")
 	public String JsonArrayToObjectArray() {
 		
-		RestTemplate rt = new RestTemplate();
-		Employee[] emps = rt.getForObject("http://localhost:9090/api/emp/list", Employee[].class);
-				return "FirstName = "+emps[0].getFname();
+		RestTemplate temp = new RestTemplate();
+		Employee[] emps = temp.getForObject("http://localhost:9090/api/emp/list", Employee[].class);
+				return "First Name : "+emps[0].getFname();
 	}
 	
 	
