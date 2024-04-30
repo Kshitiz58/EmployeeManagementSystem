@@ -52,15 +52,15 @@ public class DepartmentRestController {
 	@GetMapping("/api/dept/j2o")
 	public String JsonToObject(Model model) {
 		RestTemplate temp = new RestTemplate();
-		Department dept = temp.getForObject("http://localhost:9090/api/emp/2", Department.class);
+		Department dept = temp.getForObject("http://localhost:9090/api/dept/2", Department.class);
 		return "Department Name : "+dept.getDpt_Name();
 	}
 	
-	@GetMapping("/api/dept/ja20a")
+	@GetMapping("/api/dept/ja2oa")
 	public String JsonArrayToObject() {
 		
 		RestTemplate temp = new RestTemplate();
 		Department[] depts = temp.getForObject("http://localhost:9090/api/dept/list", Department[].class);
-		return	"First Name :"+depts[0].getDpt_Name();
+		return	"First Name : "+depts[1].getDpt_Name();
 	}
 }
