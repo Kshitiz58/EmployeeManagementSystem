@@ -46,7 +46,7 @@ public class DepartmentController {
 //			return "login";
 //		}
 		model.addAttribute("deptList", deptservice.getDepartments());
-		return "listDepartment";
+		return "DepartmentList";
 	}
 	@GetMapping("/editDepartment")
 	public String editDepartment(@RequestParam int id, Model model, HttpSession session) {

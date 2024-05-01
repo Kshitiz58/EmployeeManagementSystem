@@ -55,7 +55,7 @@ public class EmployeeController {
 //		}
 		
 		model.addAttribute("empList", empService.getAllEmp());
-		return "listEmployee";
+		return "EmployeeList";
 	}
 	
 	@GetMapping("/editEmployee")

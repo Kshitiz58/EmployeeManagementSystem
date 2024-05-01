@@ -10,9 +10,9 @@ public class IndexController {
 
 	@GetMapping("/index")
 	public String getHome(HttpSession session) {
-		if(session.getAttribute("validateUser") == null) {
-			return "login";
-		}
+//		if(session.getAttribute("validateUser") == null) {
+//			return "login";
+//		}
 		return "index";
 	}
 }

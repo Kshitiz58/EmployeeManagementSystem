@@ -39,7 +39,7 @@ public class UserController {
 				session.setMaxInactiveInterval(300);
 
 //			model.addAttribute("uname", user.getUsername());
-				return "home";
+				return "index";
 			} else {
 				model.addAttribute("message", "User not Exist!!");
 				return "login";
