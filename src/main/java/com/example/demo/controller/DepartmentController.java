@@ -22,22 +22,22 @@ public class DepartmentController {
 	@Autowired
 	private DepartmentService deptservice;
 
-	@GetMapping("/department")
+	@GetMapping("/departmentAdd")
 	public String getDepartment(HttpSession session) {
 //		if(session.getAttribute("validateUser") == null) {
 //			return "login";
 //		}
 		
-		return "addDepartment";
+		return "DepartmentAdd";
 	}
 
-	@PostMapping("/department")
+	@PostMapping("/departmentAdd")
 	public String postDepartment(@ModelAttribute Department dept, HttpSession session) {
 //		if(session.getAttribute("validateUser") == null) {
 //			return "login";
 //		}
 		deptservice.addDepartment(dept);
-		return "addDepartment";
+		return "redirect:/departmentAdd";
 	}
 	
 	@GetMapping("/departmentList")

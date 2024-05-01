@@ -7,14 +7,7 @@
 	<title>Department List</title>
 
 	<!-- Meta -->
-	<meta name="description" content="Marketplace for Bootstrap Admin Dashboards" />
-	<meta name="author" content="Bootstrap Gallery" />
 	<link rel="canonical" href="https://www.bootstrap.gallery/">
-	<meta property="og:url" content="https://www.bootstrap.gallery">
-	<meta property="og:title" content="Admin Templates - Dashboard Templates | Bootstrap Gallery">
-	<meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
-	<meta property="og:type" content="Website">
-	<meta property="og:site_name" content="Bootstrap Gallery">
 	<link rel="shortcut icon" href="assets/images/logo1.png" />
 
 	<!-- ************** CSS Files *************-->
@@ -95,7 +88,14 @@
 							</a>
 
 						</div>
+						<div class="dropdown border-start">
+							<a class="dropdown-toggle d-flex px-3 py-4 position-relative" href="#!" role="button"
+								data-bs-toggle="dropdown" aria-expanded="false">
+								<i class="bi bi-envelope-open fs-4 lh-1 text-secondary"></i>
+								<span class="count-label"></span>
+							</a>
 
+						</div>
 						<div class="dropdown ms-2">
 							<a id="userSettings"
 								class="dropdown-toggle d-flex py-2 align-items-center text-decoration-none" href="#!"
@@ -118,14 +118,6 @@
 						</div>
 					</div>
 					<!-- App header actions end -->
-
-				</div>
-				<!-- App header ends -->
-				<div class="app-header d-flex align-items-center">
-
-
-
-
 
 				</div>
 				<!-- App header ends -->
@@ -164,25 +156,40 @@
 															<td>[[${d.dpt_Head}]]</td>
 															<td>[[${d.dpt_Phone}]]</td>
 															<td>
-																
-																	<button class="btn btn-outline-primary btn-sm"
+																<a>
+																	<button class="btn btn-outline-secondary btn-sm"
 																		data-bs-toggle="tooltip" data-bs-placement="top"
-																		data-bs-custom-class="custom-tooltip-primary"
+																		data-bs-custom-class="custom-tooltip-secondary"
 																		data-bs-title="Edit">
 																		<i class="bi bi-pencil-square"></i>
 																	</button>
-																
-																<button class="btn btn-outline-danger btn-sm"
-																	data-bs-toggle="tooltip" data-bs-placement="top"
-																	data-bs-custom-class="custom-tooltip-danger"
-																	data-bs-title="Delete">
-																	<i class="bi bi-trash3"></i>
-																</button>
+																</a>
+																<a th:href="@{/deleteDepartment(id=${d.id})}">
+																	<button class="btn btn-outline-danger btn-sm"
+																		data-bs-toggle="tooltip" data-bs-placement="top"
+																		data-bs-custom-class="custom-tooltip-danger"
+																		data-bs-title="Delete">
+																		<i class="bi bi-trash3"></i>
+																	</button>
+																</a>
 															</td>
 															<td>
-																<button class="btn btn-outline-primary btn-sm">
-																	<i class="bi bi-download"></i>
-																</button>
+																<a href="/departmentExcel">
+																	<button class="btn btn-outline-success btn-sm"
+																		data-bs-toggle="tooltip" data-bs-placement="top"
+																		data-bs-custom-class="custom-tooltip-success"
+																		data-bs-title="Excel">
+																		<i class="bi bi-download"></i>
+																	</button>
+																</a>
+																<a href="/departmentPdf">
+																	<button class="btn btn-outline-info btn-sm"
+																		data-bs-toggle="tooltip" data-bs-placement="top"
+																		data-bs-custom-class="custom-tooltip-info"
+																		data-bs-title="Pdf">
+																		<i class="bi bi-download"></i>
+																	</button>
+																</a>
 															</td>
 														</tr>
 

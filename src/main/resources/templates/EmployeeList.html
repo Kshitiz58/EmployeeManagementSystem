@@ -7,14 +7,7 @@
 	<title>Employee List</title>
 
 	<!-- Meta -->
-	<meta name="description" content="Marketplace for Bootstrap Admin Dashboards" />
-	<meta name="author" content="Bootstrap Gallery" />
 	<link rel="canonical" href="https://www.bootstrap.gallery/">
-	<meta property="og:url" content="https://www.bootstrap.gallery">
-	<meta property="og:title" content="Admin Templates - Dashboard Templates | Bootstrap Gallery">
-	<meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
-	<meta property="og:type" content="Website">
-	<meta property="og:site_name" content="Bootstrap Gallery">
 	<link rel="shortcut icon" href="assets/images/logo1.png" />
 
 	<!-- ************** CSS Files *************-->
@@ -95,7 +88,14 @@
 							</a>
 
 						</div>
+						<div class="dropdown border-start">
+							<a class="dropdown-toggle d-flex px-3 py-4 position-relative" href="#!" role="button"
+								data-bs-toggle="dropdown" aria-expanded="false">
+								<i class="bi bi-envelope-open fs-4 lh-1 text-secondary"></i>
+								<span class="count-label"></span>
+							</a>
 
+						</div>
 						<div class="dropdown ms-2">
 							<a id="userSettings"
 								class="dropdown-toggle d-flex py-2 align-items-center text-decoration-none" href="#!"
@@ -121,14 +121,6 @@
 
 				</div>
 				<!-- App header ends -->
-				<div class="app-header d-flex align-items-center">
-
-
-
-
-
-				</div>
-				<!-- App header ends -->
 
 				<!-- App body starts -->
 				<div class="app-body">
@@ -142,6 +134,7 @@
 								<div class="card mb-3">
 									<div class="card-header">
 										<h4 class="card-title">Employee List</h4>
+
 									</div>
 									<div class="card-body">
 										<div class="border border-dark rounded-3">
@@ -172,26 +165,41 @@
 															<td>[[${e.company}]]</td>
 															<td>[[${e.post}]]</td>
 															<td>
-																<a th:href="@{/editEmployee(id=${e.id})}">
-																<button class="btn btn-outline-primary btn-sm"
-																	data-bs-toggle="tooltip" data-bs-placement="top"
-																	data-bs-custom-class="custom-tooltip-primary"
-																	data-bs-title="Edit">
-																	<i class="bi bi-pencil-square"></i>
-																</button>
+																<a>
+																	<button class="btn btn-outline-secondary btn-sm"
+																		data-bs-toggle="tooltip" data-bs-placement="top"
+																		data-bs-custom-class="custom-tooltip-secondary"
+																		data-bs-title="Edit">
+																		<i class="bi bi-pencil-square"></i>
+																	</button>
 																</a>
-																<button class="btn btn-outline-danger btn-sm"
-																	data-bs-toggle="tooltip" data-bs-placement="top"
-																	data-bs-custom-class="custom-tooltip-danger"
-																	data-bs-title="Delete">
-																	<i class="bi bi-trash3"></i>
-																</button>
+																<a th:href="@{/deleteEmployee(id=${e.id})}">
+																	<button class="btn btn-outline-danger btn-sm"
+																		data-bs-toggle="tooltip" data-bs-placement="top"
+																		data-bs-custom-class="custom-tooltip-danger"
+																		data-bs-title="Delete">
+																		<i class="bi bi-trash3"></i>
+																	</button>
+																</a>
 															</td>
 															<td>
-																	<button class="btn btn-outline-primary btn-sm">
+																<a href="/EmployeeExcel">
+																	<button class="btn btn-outline-success btn-sm"
+																		data-bs-toggle="tooltip" data-bs-placement="top"
+																		data-bs-custom-class="custom-tooltip-success"
+																		data-bs-title="Excel">
 																		<i class="bi bi-download"></i>
 																	</button>
-																</td>
+																</a>
+																<a href="/EmployeePdf">
+																	<button class="btn btn-outline-info btn-sm"
+																		data-bs-toggle="tooltip" data-bs-placement="top"
+																		data-bs-custom-class="custom-tooltip-info"
+																		data-bs-title="Pdf">
+																		<i class="bi bi-download"></i>
+																	</button>
+																</a>
+															</td>
 														</tr>
 
 													</tbody>

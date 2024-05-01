@@ -27,7 +27,7 @@ public class EmployeeController {
 	@Autowired 
 	private DepartmentService service;
 	
-	@GetMapping("/employee")
+	@GetMapping("/employeeAdd")
 	public String getEmployee(Model model, HttpSession session) {
 		
 //		if(session.getAttribute("validateUser") == null) {
@@ -35,17 +35,17 @@ public class EmployeeController {
 //		}
 //		
 		model.addAttribute("deptList", service.getDepartments());
-		return "addEmployee";
+		return "EmployeeAdd";
 	}
 	
-	@PostMapping("/employee")
+	@PostMapping("/employeeAdd")
 	public String postEmployee(@ModelAttribute Employee employee, HttpSession session) {
 //		if(session.getAttribute("validateUser") == null) {
 //			return "login";
 //		}
 		empService.addEmployee(employee);
 		
-		return "redirect:/employee";
+		return "redirect:/employeeAdd";
 	}
 	
 	@GetMapping("/employeeList")
