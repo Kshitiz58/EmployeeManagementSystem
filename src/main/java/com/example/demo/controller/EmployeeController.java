@@ -15,9 +15,6 @@ import com.example.demo.service.EmployeeService;
 import com.example.demo.utlis.EmployeeExcelView;
 import com.example.demo.utlis.EmployeePdfView;
 
-import jakarta.servlet.http.HttpSession;
-
-
 @Controller
 public class EmployeeController {
 
@@ -28,60 +25,45 @@ public class EmployeeController {
 	private DepartmentService service;
 	
 	@GetMapping("/employeeAdd")
-	public String getEmployee(Model model, HttpSession session) {
+	public String getEmployee(Model model) {
 		
-//		if(session.getAttribute("validateUser") == null) {
-//			return "login";
-//		}
-//		
+		
 		model.addAttribute("deptList", service.getDepartments());
 		return "EmployeeAdd";
 	}
 	
 	@PostMapping("/employeeAdd")
-	public String postEmployee(@ModelAttribute Employee employee, HttpSession session) {
-//		if(session.getAttribute("validateUser") == null) {
-//			return "login";
-//		}
+	public String postEmployee(@ModelAttribute Employee employee) {
+
 		empService.addEmployee(employee);
 		
 		return "redirect:/employeeAdd";
 	}
 	
 	@GetMapping("/employeeList")
-	public String listEmployee(Model model, HttpSession session) {
-//		if(session.getAttribute("validateUser")== null){
-//			return "login";
-//		}
-		
+	public String listEmployee(Model model) {
+
 		model.addAttribute("empList", empService.getAllEmp());
 		return "EmployeeList";
 	}
 	
 	@GetMapping("/editEmployee")
-	public String editEmployee(@RequestParam long id, Model model, HttpSession session) {
-//		if(session.getAttribute("validateUser") == null) {
-//			return "login";
-//		}
+	public String editEmployee(@RequestParam long id, Model model) {
+
 		model.addAttribute("employeeModel", empService.getEmployeeByID(id));
 		return "editEmployee";
 	}
 	
 	@PostMapping("/updateEmployee")
-	public String updateEmployee(@ModelAttribute Employee employee, HttpSession session) {
-//		if(session.getAttribute("validateUser") == null) {
-//			return "login";
-//		}
+	public String updateEmployee(@ModelAttribute Employee employee) {
 		empService.addEmployee(employee);
 		return "redirect:/employeeList";
 	}
 	
 
 	@GetMapping("/deleteEmployee")
-	public String deleteEmployee(@RequestParam Long id, HttpSession session) {
-//		if(session.getAttribute("validateUser") == null) {
-//			return "login";
-//		}
+	public String deleteEmployee(@RequestParam Long id) {
+
 		empService.deleteEmployee(id);
 		return "redirect:/employeeList";
 	}

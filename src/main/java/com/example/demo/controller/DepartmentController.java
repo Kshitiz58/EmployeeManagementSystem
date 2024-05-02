@@ -14,7 +14,6 @@ import com.example.demo.service.DepartmentService;
 import com.example.demo.utlis.DepartmentExcelView;
 import com.example.demo.utlis.DepartmentPdfView;
 
-import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class DepartmentController {
@@ -23,55 +22,38 @@ public class DepartmentController {
 	private DepartmentService deptservice;
 
 	@GetMapping("/departmentAdd")
-	public String getDepartment(HttpSession session) {
-//		if(session.getAttribute("validateUser") == null) {
-//			return "login";
-//		}
-		
+	public String getDepartment() {
+
 		return "DepartmentAdd";
 	}
 
 	@PostMapping("/departmentAdd")
-	public String postDepartment(@ModelAttribute Department dept, HttpSession session) {
-//		if(session.getAttribute("validateUser") == null) {
-//			return "login";
-//		}
+	public String postDepartment(@ModelAttribute Department dept) {
 		deptservice.addDepartment(dept);
 		return "redirect:/departmentAdd";
 	}
 	
 	@GetMapping("/departmentList")
-	public String listDepartment(Model model, HttpSession session) {
-//		if(session.getAttribute("validateUser") == null) {
-//			return "login";
-//		}
+	public String listDepartment(Model model) {
 		model.addAttribute("deptList", deptservice.getDepartments());
 		return "DepartmentList";
 	}
 	@GetMapping("/editDepartment")
-	public String editDepartment(@RequestParam int id, Model model, HttpSession session) {
-//		if(session.getAttribute("validateUser") == null) {
-//			return "login";
-//		}
+	public String editDepartment(@RequestParam int id, Model model) {
 		model.addAttribute("deptModel", deptservice.getDepartmentById(id));
 		return "editDepartment";
 		
 	}
 	
 	@PostMapping("/updateDepartment")
-	public String updateDepartment(@ModelAttribute Department department, HttpSession session) {
-//		if(session.getAttribute("validateUser") == null) {
-//			return "login";
-//		}
+	public String updateDepartment(@ModelAttribute Department department) {
+
 		deptservice.addDepartment(department);
 		return "redirect:/departmentList";
 	}
 	
 	@GetMapping("/deleteDepartment")
-	public String deleteDepartment(@RequestParam int id, HttpSession session) {
-//		if(session.getAttribute("validateUser") == null) {
-//			return "login";
-//		}
+	public String deleteDepartment(@RequestParam int id) {
 		deptservice.deleteDepartment(id);
 		return "redirect:/departmentList";
 		
