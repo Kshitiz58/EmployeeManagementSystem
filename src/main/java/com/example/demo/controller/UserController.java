@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.model.User;
 import com.example.demo.service.UserService;
-//import com.example.demo.utlis.VerifyRecaptcha;
+import com.example.demo.utlis.VerifyRecaptcha;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -31,11 +31,11 @@ public class UserController {
 	@PostMapping("/login")
 	public String doLogin(@ModelAttribute User user, Model model, HttpSession session,
 			@RequestParam("g-recaptcha-response") String recptCode) throws IOException {
-//		if (VerifyRecaptcha.verify(recptCode)) {
+		if (VerifyRecaptcha.verify(recptCode)) {
 			User usr = service.userLogin(user.getUsername(), user.getPassword());
 
 			if (usr != null) {
-//				session.setAttribute("validateUser", usr);
+				session.setAttribute("validateUser", usr);
 //				session.setMaxInactiveInterval(300);
 
 //			model.addAttribute("uname", user.getUsername());
@@ -44,9 +44,9 @@ public class UserController {
 				model.addAttribute("message", "User not Exist!!");
 				return "login";
 			}
-//		}
-//		model.addAttribute("message","You are Robot!!");
-//		return "login";
+		}
+		model.addAttribute("message","You are Robot!!");
+		return "login";
 
 	}
 
@@ -74,9 +74,9 @@ public class UserController {
 	
 	@GetMapping("/profile")
 	public String getProfile(HttpSession session) {
-//		if(session.getAttribute("validateUser") == null) {
-//			return "login";
-//		}
+		if(session.getAttribute("validateUser") == null) {
+			return "login";
+		}
 		return "profile";
 	}
 

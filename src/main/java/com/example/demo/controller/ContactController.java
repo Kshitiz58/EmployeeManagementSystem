@@ -17,13 +17,13 @@ public class ContactController {
 	@Autowired
 	MailUtlis mailUtil;
 
-	@GetMapping("/contact")
+	@GetMapping("/contacts")
 	public String getUpload() {
-		return "contact";
+		return "Contacts";
 
 	}
 
-	@PostMapping("/contact")
+	@PostMapping("/contacts")
 	public String postContact(@RequestParam String toEmail, @RequestParam String subject, @RequestParam String message,
 			@RequestParam MultipartFile file) {
 
@@ -33,7 +33,7 @@ public class ContactController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return "contact";
+		return "Contacts";
 
 	}
 }
