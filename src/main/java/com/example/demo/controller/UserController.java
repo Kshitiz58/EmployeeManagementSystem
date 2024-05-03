@@ -23,7 +23,7 @@ public class UserController {
 	@Autowired
 	private UserService service;
 
-	@GetMapping({ "/", "/login" })
+	@GetMapping("/login")
 	public String getlogin() {
 		return "login";
 	}
@@ -39,7 +39,7 @@ public class UserController {
 //				session.setMaxInactiveInterval(300);
 
 //			model.addAttribute("uname", user.getUsername());
-				return "index";
+				return "redirect:/employeeList";
 			} else {
 				model.addAttribute("message", "User not Exist!!");
 				return "login";
@@ -62,7 +62,7 @@ public class UserController {
 
 		service.userSignup(user);
 
-		return "login";
+		return "redirect:/login";
 
 	}
 	@GetMapping("/logout")

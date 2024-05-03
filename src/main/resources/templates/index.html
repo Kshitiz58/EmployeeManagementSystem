@@ -1,213 +1,295 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 
 <head>
-	<title>Home Page</title>
-	<link href="https://fonts.googleapis.com/css?family=Heebo:400,700|Oxygen:700" rel="stylesheet">
-	<link rel="stylesheet" href="dist/css/style.css">
-	<link rel="shortcut icon" href="assets/images/logo1.png" />
-	<script src="https://unpkg.com/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <title>Homepage</title>
+  <link rel="stylesheet" href="Homepage/vendors/owl-carousel/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="Homepage/vendors/owl-carousel/css/owl.theme.default.css">
+  <link rel="stylesheet" href="Homepage/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="Homepage/vendors/aos/css/aos.css">
+  <link rel="stylesheet" href="Homepage/css/style.min.css">
+  <link rel="shortcut icon" href="Homepage/images/logo1.png" />
 </head>
 
-<body class="is-boxed has-animations">
-	<div class="body-wrap boxed-container">
-		<header class="site-header text-light">
-			<div class="container">
-				<div class="site-header-inner">
-					<div class="brand header-brand">
-						<h1 class="m-0">
-							<a href="/index">
-								<img class="header-logo-image" src="assets/images/logo.png" alt="Logo">
-							</a>
-						</h1>
-					</div>
-				</div>
-			</div>
-		</header>
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="100">
+  <header id="header-section">
+    <nav class="navbar navbar-expand-lg pl-3 pl-sm-0" id="navbar">
+      <div class="container">
+        <div class="navbar-brand-wrapper d-flex w-100">
+          <a href="/">
+            <img src="Homepage/images/logo2.png" alt="Logo">
+          </a>
+          <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="mdi mdi-menu navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-menu-wrapper" id="navbarSupportedContent">
+          <ul class="navbar-nav align-items-lg-center align-items-start ml-auto">
+            <li class="d-flex align-items-center justify-content-between pl-4 pl-lg-0">
+              <div class="navbar-collapse-logo">
+                <img src="Homepage/images/logo.png" alt="">
+              </div>
+              <button class="navbar-toggler close-button" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="mdi mdi-close navbar-toggler-icon pl-5"></span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#header-section">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#features-section">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#digital-marketing-section">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="banner">
+    <div class="container">
+      <h1 class="font-weight-semibold">Welcome to the<br>Employee Management System.</h1>
+      <h6 class="font-weight-normal text-muted pb-3">Where your can ease your managerial task more easy and convinent.
+      </h6>
+      <div>
+        <a href="/login">
+          <button class="btn btn-info ml-1">Get Login</button>
+        </a>
+      </div>
+      <img src="Homepage/images/Group171.svg" alt="" class="img-fluid">
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div class="container">
+      <section class="features-overview" id="features-section">
+        <div class="content-header">
+          <h2>How does it works</h2>
+          <h6 class="section-subtitle text-muted">One theme that serves as an easy-to-use operational toolkit<br>that
+            meets customer's needs.</h6>
+        </div>
+        <div class="d-md-flex justify-content-between">
+          <div class="grid-margin d-flex justify-content-start">
+            <div class="features-width">
+              <img src="Homepage/images/Group12.svg" alt="" class="img-icons">
+              <h5 class="py-3">Speed<br>Optimisation</h5>
+              <p class="text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis,
+                suspendisse.</p>
+              <a href="#">
+                <p class="readmore-link">Readmore</p>
+              </a>
+            </div>
+          </div>
+          <div class="grid-margin d-flex justify-content-center">
+            <div class="features-width">
+              <img src="Homepage/images/Group7.svg" alt="" class="img-icons">
+              <h5 class="py-3">SEO and<br>Backlinks</h5>
+              <p class="text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis,
+                suspendisse.</p>
+              <a href="#">
+                <p class="readmore-link">Readmore</p>
+              </a>
+            </div>
+          </div>
+          <div class="grid-margin d-flex justify-content-end">
+            <div class="features-width">
+              <img src="Homepage/images/Group5.svg" alt="" class="img-icons">
+              <h5 class="py-3">Content<br>Marketing</h5>
+              <p class="text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis,
+                suspendisse.</p>
+              <a href="#">
+                <p class="readmore-link">Readmore</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="digital-marketing-service" id="digital-marketing-section">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-7 grid-margin grid-margin-lg-0" data-aos="fade-right">
+            <h3 class="m-0">We Offer a Full Range<br>of Digital Marketing Services!</h3>
+            <div class="col-lg-7 col-xl-6 p-0">
+              <p class="py-4 m-0 text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus
+                consectetuer turpis, suspendisse.</p>
+              <p class="font-weight-medium text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus
+                consectetuer</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-5 p-0 img-digital grid-margin grid-margin-lg-0" data-aos="fade-left">
+            <img src="Homepage/images/Group1.png" alt="" class="img-fluid">
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-7 text-center flex-item grid-margin" data-aos="fade-right">
+            <img src="Homepage/images/Group2.png" alt="" class="img-fluid">
+          </div>
+          <div class="col-12 col-lg-5 flex-item grid-margin" data-aos="fade-left">
+            <h3 class="m-0">Leading Digital Agency<br>for Business Solution.</h3>
+            <div class="col-lg-9 col-xl-8 p-0">
+              <p class="py-4 m-0 text-muted">Power-packed with impressive features and well-optimized, this template is
+                designed to provide the best performance in all circumstances.</p>
+              <p class="pb-2 font-weight-medium text-muted">Its smart features make it a powerful stand-alone website
+                building tool.</p>
+            </div>
+            <button class="btn btn-info">Readmore</button>
+          </div>
+        </div>
+      </section>
+      <section class="case-studies" id="case-studies-section">
+        <div class="row grid-margin">
+          <div class="col-12 text-center pb-5">
+            <h2>Our case studies</h2>
+            <h6 class="section-subtitle text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum.</h6>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in">
+            <div class="card color-cards">
+              <div class="card-body p-0">
+                <div class="bg-primary text-center card-contents">
+                  <div class="card-image">
+                    <img src="Homepage/images/Group95.svg" class="case-studies-card-img" alt="">
+                  </div>
+                  <div class="card-desc-box d-flex align-items-center justify-content-around">
+                    <div>
+                      <h6 class="text-white pb-2 px-3">Know more about Online marketing</h6>
+                      <button class="btn btn-white">Read More</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-details text-center pt-4">
+                  <h6 class="m-0 pb-1">Online Marketing</h6>
+                  <p>Seo, Marketing</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card color-cards">
+              <div class="card-body p-0">
+                <div class="bg-warning text-center card-contents">
+                  <div class="card-image">
+                    <img src="Homepage/images/Group108.svg" class="case-studies-card-img" alt="">
+                  </div>
+                  <div class="card-desc-box d-flex align-items-center justify-content-around">
+                    <div>
+                      <h6 class="text-white pb-2 px-3">Know more about Web Development</h6>
+                      <button class="btn btn-white">Read More</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-details text-center pt-4">
+                  <h6 class="m-0 pb-1">Web Development</h6>
+                  <p>Developing, Designing</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
+            <div class="card color-cards">
+              <div class="card-body p-0">
+                <div class="bg-violet text-center card-contents">
+                  <div class="card-image">
+                    <img src="Homapge/images/Group126.svg" class="case-studies-card-img" alt="">
+                  </div>
+                  <div class="card-desc-box d-flex align-items-center justify-content-around">
+                    <div>
+                      <h6 class="text-white pb-2 px-3">Know more about Web Designing</h6>
 
-		<main>
-			<section class="hero text-center text-light">
-				<div class="hero-bg"></div>
-				<div class="hero-particles-container">
-					<canvas id="hero-particles"></canvas>
-				</div>
-				<div class="container-sm">
-					<div class="hero-inner">
-						<div class="hero-copy">
-							<h1 class="hero-title mt-0">Welcome to employee management system.</h1>
-							<p class="hero-paragraph">We help to mantain your employee system in 
-								better quality.
-							</p>
-							<div class="hero-cta">
-								<a class="button button-primary button-wide-mobile" href="/employeeList">Start Managing</a>
-							</div>
-						</div>
-						<div class="mockup-container">
-							<div class="mockup-bg">
-								<img src="dist/images/iphone-hero-bg.svg" alt="iPhone illustration">
-							</div>
-							<img class="device-mockup" src="dist/images/iphone-hero.png" alt="iPhone Hero">
-						</div>
-					</div>
-				</div>
-			</section>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-details text-center pt-4">
+                  <h6 class="m-0 pb-1">Web Designing</h6>
+                  <p>Designing, Developing</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 stretch-card" data-aos="zoom-in" data-aos-delay="600">
+            <div class="card color-cards">
+              <div class="card-body p-0">
+                <div class="bg-success text-center card-contents">
+                  <div class="card-image">
+                    <img src="Homepage/images/Group115.svg" class="case-studies-card-img" alt="">
+                  </div>
+                  <div class="card-desc-box d-flex align-items-center justify-content-around">
+                    <div>
+                      <h6 class="text-white pb-2 px-3">Know more about Software Development</h6>
+                      <button class="btn btn-white">Read More</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-details text-center pt-4">
+                  <h6 class="m-0 pb-1">Software Development</h6>
+                  <p>Developing, Designing</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-			<section class="features-extended section">
-				<div class="features-extended-inner section-inner">
-					<div class="features-extended-wrap">
-						<div class="container">
-							<div class="feature-extended">
-								<div class="feature-extended-image">
-									<div class="mockup-bg">
-										<img src="dist/images/iphone-feature-bg-01.svg"
-											alt="iPhone Feature 01 illustration">
-									</div>
-									<img class="device-mockup is-revealing" src="dist/images/iphone-feature-01.png"
-										alt="iPhone Feature 01">
-								</div>
-								<div class="feature-extended-body is-revealing">
-									<h3 class="mt-0 mb-16">Amazing features, coming soon.</h3>
-									<p class="m-0">Quam quisque id diam vel quam elementum pulvinar. Ut etiam sit amet
-										nisl purus in mollis nunc. Odio morbi quis commodo odio aenean sed adipiscing
-										diam donec.</p>
-								</div>
-							</div>
-							<div class="feature-extended">
-								<div class="feature-extended-image">
-									<div class="mockup-bg">
-										<img src="dist/images/iphone-feature-bg-02.svg"
-											alt="iPhone Feature 02 illustration">
-									</div>
-									<img class="device-mockup is-revealing" src="dist/images/iphone-feature-02.png"
-										alt="iPhone Feature 02">
-								</div>
-								<div class="feature-extended-body is-revealing">
-									<h3 class="mt-0 mb-16">Amazing features, coming soon.</h3>
-									<p class="m-0">Quam quisque id diam vel quam elementum pulvinar. Ut etiam sit amet
-										nisl purus in mollis nunc. Odio morbi quis commodo odio aenean sed adipiscing
-										diam donec.</p>
-								</div>
-							</div>
-							<div class="feature-extended">
-								<div class="feature-extended-image">
-									<div class="mockup-bg">
-										<img src="dist/images/iphone-feature-bg-03.svg"
-											alt="iPhone Feature 03 illustration">
-									</div>
-									<img class="device-mockup is-revealing" src="dist/images/iphone-feature-03.png"
-										alt="iPhone Feature 03">
-								</div>
-								<div class="feature-extended-body is-revealing">
-									<h3 class="mt-0 mb-16">Amazing features, coming soon.</h3>
-									<p class="m-0">Quam quisque id diam vel quam elementum pulvinar. Ut etiam sit amet
-										nisl purus in mollis nunc. Odio morbi quis commodo odio aenean sed adipiscing
-										diam donec.</p>
-								</div>
-							</div>
-							<div class="feature-extended">
-								<div class="feature-extended-image">
-									<div class="mockup-bg">
-										<img src="dist/images/iphone-feature-bg-04.svg"
-											alt="iPhone Feature 04 illustration">
-									</div>
-									<img class="device-mockup is-revealing" src="dist/images/iphone-feature-04.png"
-										alt="iPhone Feature 04">
-								</div>
-								<div class="feature-extended-body is-revealing">
-									<h3 class="mt-0 mb-16">Amazing features, coming soon.</h3>
-									<p class="m-0">Quam quisque id diam vel quam elementum pulvinar. Ut etiam sit amet
-										nisl purus in mollis nunc. Odio morbi quis commodo odio aenean sed adipiscing
-										diam donec.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</main>
 
-		<footer class="site-footer">
-			<div class="footer-particles-container">
-				<canvas id="footer-particles"></canvas>
-			</div>
-			<div class="site-footer-top">
-				<section class="cta section text-light">
-					<div class="container-sm">
-						<div class="cta-inner section-inner">
-							<div class="cta-header text-center">
-								<h2 class="section-title mt-0">Stay in the know</h2>
-								<p class="section-paragraph">Lorem ipsum is common placeholder text used to demonstrate
-									the graphic elements of a document or visual presentation.</p>
-								<div class="cta-cta">
-									<a class="button button-primary button-wide-mobile" href="/logout">Logout</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
-			<div class="site-footer-bottom">
-				<div class="container">
-					<div class="site-footer-inner">
-						<div class="brand footer-brand">
-							<a href="/index">
-								<img src="assets/images/logo.png" alt="Venus logo">
-							</a>
-						</div>
-						<ul class="footer-links list-reset">
-							<li>
-								<a href="#">Contact</a>
-							</li>
-							<li>
-								<a href="#">About us</a>
-							</li>
-							<li>
-								<a href="#">FAQ's</a>
-							</li>
-							<li>
-								<a href="#">Support</a>
-							</li>
-						</ul>
-						<ul class="footer-social-links list-reset">
-							<li>
-								<a href="#">
-									<span class="screen-reader-text">Facebook</span>
-									<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-										<path
-											d="M6.023 16L6 9H3V6h3V4c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V6H13l-1 3H9.28v7H6.023z"
-											fill="#FFF" />
-									</svg>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="screen-reader-text">Twitter</span>
-									<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-										<path
-											d="M16 3c-.6.3-1.2.4-1.9.5.7-.4 1.2-1 1.4-1.8-.6.4-1.3.6-2.1.8-.6-.6-1.5-1-2.4-1-1.7 0-3.2 1.5-3.2 3.3 0 .3 0 .5.1.7-2.7-.1-5.2-1.4-6.8-3.4-.3.5-.4 1-.4 1.7 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.5-.4C.7 7.7 1.8 9 3.3 9.3c-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.3 3.1 2.3-1.1.9-2.5 1.4-4.1 1.4H0c1.5.9 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3v-.4C15 4.3 15.6 3.7 16 3z"
-											fill="#FFF" />
-									</svg>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="screen-reader-text">Google</span>
-									<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-										<path
-											d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z"
-											fill="#FFF" />
-									</svg>
-								</a>
-							</li>
-						</ul>
-						<div class="footer-copyright">&copy; 2024 Kshitiz Creation</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-	</div>
-
-	<script src="dist/js/main.min.js"></script>
+      <section class="contact-details" id="contact-details-section">
+        <div class="row text-center text-md-left">
+          <div class="col-12 col-md-6 col-lg-3 grid-margin">
+            <img src="Homepage/images/logo2.png" alt="" class="pb-2">
+            <div class="pt-2">
+              <p class="text-muted m-0">employee@management.com</p>
+              <p class="text-muted m-0">9805056789</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 grid-margin">
+            <h5 class="pb-2">Get in Touch</h5>
+            <p class="text-muted">Don’t miss any updates of our new templates and extensions.!</p>
+            <form method="post" action="/">
+              <input type="email" class="form-control" name="email" placeholder="Email id">
+              <div class="pt-3">
+              <button type="submit" value="add" class="btn btn-dark">Subscribe</button>
+            </div>
+            </form>
+            
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 grid-margin">
+            <h5 class="pb-2">Our Guidelines</h5>
+            <a href="#">
+              <p class="m-0 pb-2">Terms</p>
+            </a>
+            <a href="#">
+              <p class="m-0 pt-1 pb-2">Privacy policy</p>
+            </a>
+            <a href="#">
+              <p class="m-0 pt-1 pb-2">Cookie Policy</p>
+            </a>
+            <a href="#">
+              <p class="m-0 pt-1">Discover</p>
+            </a>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 grid-margin">
+            <h5 class="pb-2">Our address</h5>
+            <p class="text-muted">Old Baneshwor<br>Kathmandu. Nepal</p>
+            <div class="d-flex justify-content-center justify-content-md-start">
+              <a href="#"><span class="mdi mdi-facebook"></span></a>
+              <a href="#"><span class="mdi mdi-twitter"></span></a>
+              <a href="#"><span class="mdi mdi-instagram"></span></a>
+              <a href="#"><span class="mdi mdi-linkedin"></span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="border-top">
+        <p class="text-center text-muted pt-4">Copyright © Employee Management System 2024</p>
+      </footer>
+    </div>
+  </div>
+  <script src="Homepage/vendors/jquery/jquery.min.js"></script>
+  <script src="Homepage/vendors/bootstrap/bootstrap.min.js"></script>
+  <script src="Homepage/vendors/owl-carousel/js/owl.carousel.min.js"></script>
+  <script src="Homepage/vendors/aos/js/aos.js"></script>
+  <script src="Homepage/js/landingpage.js"></script>
 </body>
 
 </html>
