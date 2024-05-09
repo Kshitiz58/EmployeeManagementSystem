@@ -77,7 +77,7 @@ public class UserController {
 		if(session.getAttribute("validateUser") == null) {
 			return "login";
 		}
-		return "profile";
+		return "Profile";
 	}
 
 	

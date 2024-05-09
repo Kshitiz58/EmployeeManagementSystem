@@ -41,17 +41,13 @@ public class DepartmentServiceImpl implements DepartmentService{
 			return "Department Deleted Success.";
 		}else {
 			return "Department Unavailable.";
-		}
-			
+		}	
 	}
 
 	@Override
 	public void updateDepartment(Department department) {
 		deptRepo.save(department);
 		
-	}
-
-
-	
+	}	
 
 }
