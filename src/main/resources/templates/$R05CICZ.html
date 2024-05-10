@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Department List</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<div th:insert="header.html"></div>
+	<hr>
+	<div class="container-fluid">
+		<div class="card">
+			<div class="card-header bg-primary text-white text-center">
+				<h4>Department List</h4>
+
+			</div>
+			<div class="card-body">
+
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>Department Name</th>
+							<th>Department Head(HOD)</th>
+							<th>Department Contact</th>
+							<th>Action</th>
+							<th>Download</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr th:each="d: ${deptList}">
+
+							<td>[[${d.dpt_Name}]]</td>
+							<td>[[${d.dpt_Head}]]</td>
+							<td>[[${d.dpt_Phone}]]</td>
+
+							<td>
+								<a th:href="@{/editDepartment(id=${d.id})}">
+									<input type="submit" value="Edit" class="btn btn-success">
+								</a>
+								<a th:href="@{/deleteDepartment(id=${d.id})}">
+									<input type="submit" value="Delete" class="btn btn-danger">
+								</a>
+							</td>
+							<td>
+								<a href="/departmentExcel"> <input type="submit" value="Excel" class="btn btn-success"> </a>
+								<a href="/departmentPdf"> <input type="submit" value="Pdf" class="btn btn-primary"> </a>
+							</td>
+
+						</tr>
+
+					</tbody>
+				</table>
+
+			</div>
+
+			<div class="card-footer bg-warning text-black text-center">&copy; 2024 Kshitiz Creation</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>

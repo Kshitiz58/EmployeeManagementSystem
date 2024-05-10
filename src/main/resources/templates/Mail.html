@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Contact Form</title>
+	<title>Email Form</title>
 
 	<!-- Meta -->
 	<link rel="canonical" href="https://www.bootstrap.gallery/">
@@ -44,9 +44,9 @@
 					<ol class="breadcrumb d-none d-lg-flex ms-3">
 						<li class="breadcrumb-item">
 							<i class="bi bi-house lh-1"></i>
-							<a href="/contacts" class="text-decoration-none">Dashboard</a>
+							<a href="/mail" class="text-decoration-none">Dashboard</a>
 						</li>
-						<li class="breadcrumb-item text-secondary">Contact</li>
+						<li class="breadcrumb-item text-secondary">Send Mail</li>
 					</ol>
 					<!-- Breadcrumb end -->
 
@@ -85,9 +85,9 @@
 								<div class="p-3 border-bottom mb-2">
 									<h6 class="mb-1">[[${session.validateUser.fname}]] [[${session.validateUser.lname}]]
 									</h6>
-									<p class="m-0 small opacity-50">Admin - EMS</p>
+									<p class="m-0 small opacity-50">[[${session.validateUser.username}]] - EMS</p>
 								</div>
-								<a class="dropdown-item d-flex align-items-center" href="#"><i
+								<a class="dropdown-item d-flex align-items-center" href="/profile"><i
 										class="bi bi-person fs-4 me-2"></i>Profile</a>
 								<a class="dropdown-item d-flex align-items-center" href="#"><i
 										class="bi bi-gear fs-4 me-2"></i>Settings</a>
@@ -104,7 +104,7 @@
 
 				<!-- App body starts -->
 				<div class="app-body">
-					<form method="post" action="/contacts" enctype="multipart/form-data">
+					<form method="post" action="/contacts">
 						<!-- Container starts -->
 						<div class="container-fluid">
 
@@ -113,7 +113,7 @@
 								<div class="col-12">
 									<div class="card mb-3">
 										<div class="card-header">
-											<h5 class="card-title">Contact</h5>
+											<h5 class="card-title">Send Mail To</h5>
 										</div>
 										<div class="card-body">
 											<!-- Row start -->
@@ -127,12 +127,6 @@
 												<input type="text" class="form-control" placeholder="Enter Subject"
 													name="subject" required />
 											</div>
-
-											<div class="mb-3">
-												<label class="form-label">Add file</label>
-												<input type="file" class="form-control" name="file" required />
-											</div>
-
 											<div class="mb-3">
 												<label class="form-label">Message</label>
 												<textarea rows="10" class="form-control" name="message"
@@ -152,9 +146,6 @@
 												</button>
 											</div>
 										</div>
-
-
-
 									</div>
 								</div>
 							</div>

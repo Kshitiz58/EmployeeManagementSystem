@@ -105,11 +105,11 @@
 							<div class="dropdown-menu dropdown-menu-end shadow-sm">
 								<div class="p-3 border-bottom mb-2">
 									<h6 class="mb-1">[[${session.validateUser.fname}]] [[${session.validateUser.lname}]]</h6>
-									<p class="m-0 small opacity-50">Admin - EMS</p>
+									<p class="m-0 small opacity-50">[[${session.validateUser.username}]] - EMS</p>
 								</div>
-								<a class="dropdown-item d-flex align-items-center" href="#"><i
+								<a class="dropdown-item d-flex align-items-center" href="/profile"><i
 										class="bi bi-person fs-4 me-2"></i>Profile</a>
-								<a class="dropdown-item d-flex align-items-center" href="#"><i
+								<a class="dropdown-item d-flex align-items-center" href="/profile"><i
 										class="bi bi-gear fs-4 me-2"></i>Settings</a>
 								<div class="d-grid p-3 py-2">
 									<a class="btn btn-danger" href="/">Logout</a>
@@ -138,7 +138,7 @@
 									<div class="card-body">
 										<div class="border border-dark rounded-3">
 											<div class="table-responsive">
-												<table class="table align-middle custom-table m-0 text-nowrap">
+												<table id="myTable" class="table align-middle custom-table m-0 text-nowrap">
 													<thead>
 														<tr>
 															<th>Id</th>
@@ -156,7 +156,7 @@
 															<td>[[${d.dpt_Head}]]</td>
 															<td>[[${d.dpt_Phone}]]</td>
 															<td>
-																<a>
+																<a th:href="@{/editDepartment(id = ${d.id})}">
 																	<button class="btn btn-outline-secondary btn-sm"
 																		data-bs-toggle="tooltip" data-bs-placement="top"
 																		data-bs-custom-class="custom-tooltip-secondary"
@@ -164,7 +164,7 @@
 																		<i class="bi bi-pencil-square"></i>
 																	</button>
 																</a>
-																<a th:href="@{/deleteDepartment(id=${d.id})}">
+																<a th:href="@{/deleteDepartment(id = ${d.id})}">
 																	<button class="btn btn-outline-danger btn-sm"
 																		data-bs-toggle="tooltip" data-bs-placement="top"
 																		data-bs-custom-class="custom-tooltip-danger"
@@ -223,17 +223,19 @@
 
 	</div>
 	<!-- Page wrapper end -->
+	<script type="text/javascript">
+	
+		$(document).ready( function () {
+		    $('#myTable').DataTable();
+		});
+	</script>
 
-	<!-- *************
-			************ JavaScript Files *************
-		************* -->
+	<!-- ************* JavaScript Files *************-->
 	<!-- Required jQuery first, then Bootstrap Bundle JS -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/bootstrap.bundle.min.js"></script>
 
-	<!-- *************
-			************ Vendor Js Files *************
-		************* -->
+	<!-- ************* Vendor Js Files ************* -->
 
 	<!-- Overlay Scroll JS -->
 	<script src="assets/vendor/overlay-scroll/jquery.overlayScrollbars.min.js"></script>
@@ -241,6 +243,7 @@
 
 	<!-- Custom JS files -->
 	<script src="assets/js/custom.js"></script>
+	
 </body>
 
 </html>

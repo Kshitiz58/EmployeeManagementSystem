@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>EMS Department Add</title>
+	<title>EMS Department Edit</title>
 
 	<!-- Meta -->
 	<link rel="canonical" href="https://www.bootstrap.gallery/">
@@ -41,9 +41,9 @@
 					<ol class="breadcrumb d-none d-lg-flex ms-3">
 						<li class="breadcrumb-item">
 							<i class="bi bi-house lh-1"></i>
-							<a href="/departmentAdd" class="text-decoration-none">Dashboard</a>
+							<a href="/editDepartment" class="text-decoration-none">Dashboard</a>
 						</li>
-						<li class="breadcrumb-item text-secondary">Add Department</li>
+						<li class="breadcrumb-item text-secondary">Edit Department</li>
 					</ol>
 					<!-- Breadcrumb end -->
 
@@ -101,7 +101,7 @@
 
 				<!-- App body starts -->
 				<div class="app-body">
-					<form method="post" action="/departmentAdd">
+					<form method="post" action="/updateDepartment" th:object="${deptModel}">
 						<!-- Container starts -->
 						<div class="container-fluid">
 
@@ -110,7 +110,7 @@
 								<div class="col-xxl-12">
 									<div class="card mb-3">
 										<div class="card-header">
-											<h5 class="card-title">Department Details</h5>
+											<h5 class="card-title"> Edit Department Details</h5>
 										</div>
 										<div class="card-body">
 											<!-- Row start -->
@@ -118,25 +118,19 @@
 												<div class="col-lg-3 col-sm-4 col-12">
 													<div class="mb-3">
 														<label class="form-label">Department Name</label>
-														<input type="text" class="form-control"
-															placeholder="Enter department name" name="dpt_Name"
-															required />
+														<input type="text" class="form-control" th:field="*{dpt_Name}" />
 													</div>
 												</div>
 												<div class="col-lg-3 col-sm-4 col-12">
 													<div class="mb-3">
 														<label class="form-label">Department Head(HOD)</label>
-														<input type="text" class="form-control"
-															placeholder="Enter department heade" name="dpt_Head"
-															required />
+														<input type="text" class="form-control" th:field="*{dpt_Head}" />
 													</div>
 												</div>
 												<div class="col-lg-3 col-sm-4 col-12">
 													<div class="mb-3">
 														<label class="form-label">Department Contact</label>
-														<input type="text" class="form-control"
-															placeholder="Enter department number" name="dpt_Phone"
-															required />
+														<input type="text" class="form-control" th:field="*{dpt_Phone}" />
 													</div>
 												</div>
 											</div>
@@ -147,8 +141,8 @@
 												<button type="button" class="btn btn-outline-secondary">
 													Cancel
 												</button>
-												<button type="submit" value="Add" class="btn btn-success">
-													Submit
+												<button type="submit" value="Update" class="btn btn-success">
+													Update
 												</button>
 											</div>
 										</div>

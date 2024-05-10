@@ -24,6 +24,18 @@ public class UserServiceImpl implements UserService{
 		userRepo.save(user);
 		
 	}
+
+	@Override
+	public User isUserExist(String un) {
+		
+		return userRepo.findByUsername(un);
+	}
+
+	@Override
+	public void resetUser(User user) {
+		
+		userRepo.save(user);
+	}
 	
 	
 

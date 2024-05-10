@@ -2,14 +2,12 @@
 <html>
 
 <head>
-	<title>Signup Form</title>
+	<title>EMS Signup</title>
 
 	<!-- Font Icon -->
 	<link rel="stylesheet" href="login/fonts/material-icon/css/material-design-iconic-font.min.css">
-
 	<!-- Main css -->
 	<link rel="stylesheet" href="login/css/style.css">
-	<link rel="stylesheet" href="assets/fonts/bootstrap/bootstrap-icons.css" />
 	<link rel="stylesheet" href="assets/css/main.min.css" />
 	<link rel="shortcut icon" href="Homepage/images/logo1.png" />
 </head>
@@ -26,6 +24,7 @@
 						<h2 class="form-title">Sign up</h2>
 
 						<form method="post" action="/signup" class="register-form" id="register-form">
+							<p style="color:crimson">[[${message}]]</p>
 							<div class="form-group">
 								<label for="name">
 									<i class="zmdi zmdi-account material-icons-name"></i>

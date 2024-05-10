@@ -1,15 +1,13 @@
 package com.example.demo.utlis;
 
-import java.io.File;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
 
-import jakarta.mail.MessagingException;
-import jakarta.mail.internet.MimeMessage;
+
 
 @Component
 public class MailUtlis {
@@ -22,29 +20,40 @@ public class MailUtlis {
 		
 		mail.setTo(toEmail);
 		mail.setSubject(subject);
-		mail.setText("<h1>" + message + "</h1>");
+		mail.setText(message);
 		
 		javaMailSender.send(mail);
 		
 	}
 	
-	public void sendEmailWithAttachment(String toEmail, String subject, String message, String path) {
-		MimeMessage msg = javaMailSender.createMimeMessage();
+//	public void sendEmailWithAttachment(String toEmail, String subject, String message, String path) {
+//		MimeMessage msg = javaMailSender.createMimeMessage();
+//		
+//		MimeMessageHelper helper;
+//		try {
+//			helper = new MimeMessageHelper(msg, true);
+//			
+//			helper.setTo(toEmail);
+//			helper.setSubject(subject);
+//			
+//			helper.setText("<h1>Check attachment for image!!</h1>", true);
+//			helper.addAttachment("Hello", new File(path));
+//		} catch (MessagingException e) {
+//			e.printStackTrace();
+//			
+//		}
+//		javaMailSender.send(msg);
+//	}
+	
+	public void SendEmail(String toEmail) {
+		SimpleMailMessage msg = new SimpleMailMessage();
+		msg.setTo(toEmail);
+		msg.setSubject("Your New Password!!");
+		msg.setText("Here is your new password : "+UUID.randomUUID().toString().substring(0,8));
 		
-		//true = multipart message
-		MimeMessageHelper helper;
-		try {
-			helper = new MimeMessageHelper(msg, true);
-			
-			helper.setTo(toEmail);
-			helper.setSubject(subject);
-			
-			helper.setText("<h1>Check attachment for image!!</h1>", true);
-			helper.addAttachment("Hello", new File(path));
-		} catch (MessagingException e) {
-			e.printStackTrace();
-			
-		}
+//		String resetLink = "http://localhost/reset";
+//		msg.setText("To reset password, Please click here : "+resetLink);
+		
 		javaMailSender.send(msg);
 	}
 }

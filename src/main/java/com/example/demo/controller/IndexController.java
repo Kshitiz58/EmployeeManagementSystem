@@ -22,7 +22,7 @@ public class IndexController {
 	@PostMapping({"/","/index"})
 	public String subsribe(@ModelAttribute Subscriber subscribe) {
 		subService.subsriberEmail(subscribe);
-		return "index";
+		return "redirect:/index";
 		
 	}
 	

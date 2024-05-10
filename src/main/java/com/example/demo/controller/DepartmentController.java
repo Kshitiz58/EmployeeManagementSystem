@@ -41,14 +41,14 @@ public class DepartmentController {
 	@GetMapping("/editDepartment")
 	public String editDepartment(@RequestParam int id, Model model) {
 		model.addAttribute("deptModel", deptservice.getDepartmentById(id));
-		return "editDepartment";
+		return "DepartmentEdit";
 		
 	}
 	
 	@PostMapping("/updateDepartment")
 	public String updateDepartment(@ModelAttribute Department department) {
 
-		deptservice.addDepartment(department);
+		deptservice.updateDepartment(department);
 		return "redirect:/departmentList";
 	}
 	
