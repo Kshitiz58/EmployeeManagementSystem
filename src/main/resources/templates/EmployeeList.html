@@ -14,10 +14,9 @@
 	<link rel="stylesheet" href="assets/fonts/bootstrap/bootstrap-icons.css" />
 	<link rel="stylesheet" href="assets/css/main.min.css" />
 
-	<!-- ************* Vendor Css Files ************ -->
-
 	<!-- Scrollbar CSS -->
 	<link rel="stylesheet" href="assets/vendor/overlay-scroll/OverlayScrollbars.min.css" />
+	
 </head>
 
 <body>
@@ -139,7 +138,7 @@
 									<div class="card-body">
 										<div class="border border-dark rounded-3">
 											<div class="table-responsive">
-												<table class="table align-middle custom-table m-0 text-nowrap">
+												<table id="myTable" class="table align-middle custom-table m-0 text-nowrap">
 													<thead>
 														<tr>
 															<th>Id</th>
@@ -245,6 +244,12 @@
 		************* -->
 
 	<!-- Overlay Scroll JS -->
+	<script src="assets/vendor/overlay-scroll/table.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#myTable').DataTable();
+		});
+	</script>
 	<script src="assets/vendor/overlay-scroll/jquery.overlayScrollbars.min.js"></script>
 	<script src="assets/vendor/overlay-scroll/custom-scrollbar.js"></script>
 

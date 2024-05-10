@@ -49,7 +49,7 @@ public class MailUtlis {
 		SimpleMailMessage msg = new SimpleMailMessage();
 		msg.setTo(toEmail);
 		msg.setSubject("Your New Password!!");
-		msg.setText("Here is your new password : "+UUID.randomUUID().toString().substring(0,8));
+//		msg.setText("Here is your new password : "+UUID.randomUUID().toString().substring(0,8));
 		
 //		String resetLink = "http://localhost/reset";
 //		msg.setText("To reset password, Please click here : "+resetLink);
