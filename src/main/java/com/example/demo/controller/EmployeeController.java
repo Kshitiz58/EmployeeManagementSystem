@@ -51,7 +51,7 @@ public class EmployeeController {
 	public String editEmployee(@RequestParam long id, Model model) {
 
 		model.addAttribute("employeeModel", empService.getEmployeeByID(id));
-		return "editEmployee";
+		return "EmployeeEdit";
 	}
 	
 	@PostMapping("/updateEmployee")

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>EMS Department Edit</title>
+	<title>EMS Employee Edit</title>
 
 	<!-- Meta -->
 	<link rel="canonical" href="https://www.bootstrap.gallery/">
@@ -41,9 +41,9 @@
 					<ol class="breadcrumb d-none d-lg-flex ms-3">
 						<li class="breadcrumb-item">
 							<i class="bi bi-house lh-1"></i>
-							<a href="/editDepartment" class="text-decoration-none">Dashboard</a>
+							<a href="#" class="text-decoration-none">Dashboard</a>
 						</li>
-						<li class="breadcrumb-item text-secondary">Edit Department</li>
+						<li class="breadcrumb-item text-secondary">Edit Employee</li>
 					</ol>
 					<!-- Breadcrumb end -->
 
@@ -101,7 +101,7 @@
 
 				<!-- App body starts -->
 				<div class="app-body">
-					<form method="post" action="/updateDepartment" th:object="${deptModel}">
+					<form method="post" action="/updateEmployee" th:object="${employeeModel}">
 						<!-- Container starts -->
 						<div class="container-fluid">
 
@@ -110,30 +110,95 @@
 								<div class="col-xxl-12">
 									<div class="card mb-3">
 										<div class="card-header">
-											<h5 class="card-title"> Edit Department Details</h5>
+											<h5 class="card-title">Edit Employee Details</h5>
 										</div>
 										<div class="card-body">
 											<!-- Row start -->
 											<div class="row gx-3">
-												<div class="col-lg-3 col-sm-4 col-12">
-													<div class="mb-3">
-														<label class="form-label">Department Name</label>
-														<input type="text" class="form-control" th:field="*{dpt_Name}" />
+												<div class="col-xxl-12">
+													<div class="bg-light p-3 mb-3 fw-bold">
+														Personal Info
 													</div>
 												</div>
 												<div class="col-lg-3 col-sm-4 col-12">
 													<div class="mb-3">
-														<label class="form-label">Department Head(HOD)</label>
-														<input type="text" class="form-control" th:field="*{dpt_Head}" />
+														<label class="form-label">First Name</label>
+														<input type="text" class="form-control" th:field="*{fname}"/>
 													</div>
 												</div>
 												<div class="col-lg-3 col-sm-4 col-12">
 													<div class="mb-3">
-														<label class="form-label">Department Contact</label>
-														<input type="text" class="form-control" th:field="*{dpt_Phone}" />
+														<label class="form-label">Last Name</label>
+														<input type="text" class="form-control" th:field="*{lname}"/>
+													</div>
+												</div>
+
+												<div class="col-lg-3 col-sm-4 col-12">
+													<div class="mb-3">
+														<label class="form-label">Gender</label>
+														<input type="text" class="form-control" th:field="*{gender}"/>
 													</div>
 												</div>
 											</div>
+											<!-- Row end -->
+
+											<!-- Row start -->
+											<div class="row gx-3">
+												<div class="col-xxl-12">
+													<div class="bg-light p-3 mb-3 fw-bold">
+														Account Details
+													</div>
+												</div>
+												<div class="col-lg-3 col-sm-4 col-12">
+													<div class="mb-3">
+														<label class="form-label">Email</label>
+														<input type="email" class="form-control" th:field="*{email}"/>
+													</div>
+												</div>
+												<div class="col-lg-3 col-sm-4 col-12">
+													<div class="mb-3">
+														<label class="form-label">Phone</label>
+														<input type="text" class="form-control" th:field="*{phone}"/>
+													</div>
+												</div>
+												<div class="col-lg-3 col-sm-4 col-12">
+													<div class="mb-3">
+														<div class="form-label">DOB</div>
+														<div class="input-group">
+															<input type="date" class="form-control datepicker"
+																th:field="*{dob}" />
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- Row end -->
+
+											<!-- Row start -->
+											<div class="row gx-3">
+												<div class="col-xxl-12">
+													<div class="bg-light p-3 mt-4 mb-3 fw-bold">
+														Company Details
+													</div>
+												</div>
+												<div class="col-lg-3 col-sm-4 col-12">
+													<div class="mb-3">
+														<label class="form-label">Company Name</label>
+														<input type="text" class="form-control" th:field="*{company}" />
+													</div>
+												</div>
+												<div class="col-lg-3 col-sm-4 col-12">
+													<div class="mb-3">
+														<label class="form-label">Post</label>
+														<input type="text" class="form-control" th:field="*{post}" />
+													</div>
+												</div>
+												<div class="col-lg-3 col-sm-4 col-12">
+													<div class="mb-3">
+														<label class="form-label">Salary</label>
+														<input type="number" class="form-control" th:field="*{salary}" />
+													</div>
+												</div>
+											</div>										
 											<!-- Row end -->
 										</div>
 										<div class="card-footer">
@@ -141,7 +206,7 @@
 												<button type="button" class="btn btn-outline-secondary">
 													Cancel
 												</button>
-												<button type="submit" value="Update" class="btn btn-success">
+												<button type="submit" value="Add" class="btn btn-success">
 													Update
 												</button>
 											</div>
@@ -153,7 +218,7 @@
 
 						</div>
 						<!-- Container ends -->
-						<input type = "hidden" th:field="*{id}">
+						<input type="hidden" th:field="*{id}">
 					</form>
 				</div>
 				<!-- App body ends -->

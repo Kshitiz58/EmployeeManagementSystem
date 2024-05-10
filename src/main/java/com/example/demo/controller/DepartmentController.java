@@ -49,6 +49,7 @@ public class DepartmentController {
 	public String updateDepartment(@ModelAttribute Department department) {
 
 		deptservice.updateDepartment(department);
+		
 		return "redirect:/departmentList";
 	}
 	

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Employee List</title>
+	<title>EMS Employee Details</title>
 
 	<!-- Meta -->
 	<link rel="canonical" href="https://www.bootstrap.gallery/">
@@ -133,7 +133,7 @@
 							<div class="col-12">
 								<div class="card mb-3">
 									<div class="card-header">
-										<h4 class="card-title">Employee List</h4>
+										<h4 class="card-title">Employee Details</h4>
 
 									</div>
 									<div class="card-body">
@@ -146,8 +146,8 @@
 															<th>First Name</th>
 															<th>Last Name</th>
 															<th>Gender</th>
-															<th>Phone</th>
 															<th>Email</th>
+															<th>Phone</th>
 															<th>Company</th>
 															<th>Post</th>
 															<th>Action</th>
@@ -160,12 +160,12 @@
 															<td>[[${e.fname}]]</td>
 															<td>[[${e.lname}]]</td>
 															<td>[[${e.gender}]]</td>
-															<td>[[${e.phone}]]</td>
 															<td>[[${e.email}]]</td>
+															<td>[[${e.phone}]]</td>
 															<td>[[${e.company}]]</td>
 															<td>[[${e.post}]]</td>
 															<td>
-																<a>
+																<a th:href="@{/editEmployee(id = ${e.id})}">
 																	<button class="btn btn-outline-secondary btn-sm"
 																		data-bs-toggle="tooltip" data-bs-placement="top"
 																		data-bs-custom-class="custom-tooltip-secondary"
@@ -173,7 +173,7 @@
 																		<i class="bi bi-pencil-square"></i>
 																	</button>
 																</a>
-																<a th:href="@{/deleteEmployee(id=${e.id})}">
+																<a th:href="@{/deleteEmployee(id = ${e.id})}">
 																	<button class="btn btn-outline-danger btn-sm"
 																		data-bs-toggle="tooltip" data-bs-placement="top"
 																		data-bs-custom-class="custom-tooltip-danger"
