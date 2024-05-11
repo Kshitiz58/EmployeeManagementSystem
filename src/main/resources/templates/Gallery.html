@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>EMS Department Details</title>
+	<title>EMS Gallery</title>
 
 	<!-- Meta -->
 	<link rel="canonical" href="https://www.bootstrap.gallery/">
@@ -18,7 +18,7 @@
 
 	<!-- Scrollbar CSS -->
 	<link rel="stylesheet" href="assets/vendor/overlay-scroll/OverlayScrollbars.min.css" />
-	
+
 </head>
 
 <body>
@@ -45,9 +45,9 @@
 					<ol class="breadcrumb d-none d-lg-flex ms-3">
 						<li class="breadcrumb-item">
 							<i class="bi bi-house lh-1"></i>
-							<a href="/departmentList" class="text-decoration-none">Dashboard</a>
+							<a href="/gallery" class="text-decoration-none">Dashboard</a>
 						</li>
-						<li class="breadcrumb-item text-secondary">Department List</li>
+						<li class="breadcrumb-item text-secondary">Gallery</li>
 					</ol>
 					<!-- Breadcrumb end -->
 
@@ -105,7 +105,8 @@
 							</a>
 							<div class="dropdown-menu dropdown-menu-end shadow-sm">
 								<div class="p-3 border-bottom mb-2">
-									<h6 class="mb-1">[[${session.validateUser.fname}]] [[${session.validateUser.lname}]]</h6>
+									<h6 class="mb-1">[[${session.validateUser.fname}]] [[${session.validateUser.lname}]]
+									</h6>
 									<p class="m-0 small opacity-50">[[${session.validateUser.username}]] - EMS</p>
 								</div>
 								<a class="dropdown-item d-flex align-items-center" href="/profile"><i
@@ -134,70 +135,14 @@
 							<div class="col-12">
 								<div class="card mb-3">
 									<div class="card-header">
-										<h4 class="card-title">Department Details</h4>
+										<h4 class="card-title">Gallery List</h4>
 									</div>
 									<div class="card-body">
-										<div class="border border-dark rounded-3">
-											<div class="table-responsive">
-												<table id="myTable" class="table table-striped align-middle custom-table m-0 text-nowrap">
-													<thead>
-														<tr>
-															<th>Id</th>
-															<th>Department Name</th>
-															<th>Department Head(HOD)</th>
-															<th>Department Contact</th>
-															<th>Action</th>
-															<th>Download</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr th:each="d: ${deptList}">
-															<td>[[${d.id}]]</td>
-															<td>[[${d.dpt_Name}]]</td>
-															<td>[[${d.dpt_Head}]]</td>
-															<td>[[${d.dpt_Phone}]]</td>
-															<td>
-																<a th:href="@{/editDepartment(id = ${d.id})}">
-																	<button class="btn btn-outline-secondary btn-sm"
-																		data-bs-toggle="tooltip" data-bs-placement="top"
-																		data-bs-custom-class="custom-tooltip-secondary"
-																		data-bs-title="Edit">
-																		<i class="bi bi-pencil-square"></i>
-																	</button>
-																</a>
-																<a th:href="@{/deleteDepartment(id = ${d.id})}">
-																	<button class="btn btn-outline-danger btn-sm"
-																		data-bs-toggle="tooltip" data-bs-placement="top"
-																		data-bs-custom-class="custom-tooltip-danger"
-																		data-bs-title="Delete">
-																		<i class="bi bi-trash3"></i>
-																	</button>
-																</a>
-															</td>
-															<td>
-																<a href="/departmentExcel">
-																	<button class="btn btn-outline-success btn-sm"
-																		data-bs-toggle="tooltip" data-bs-placement="top"
-																		data-bs-custom-class="custom-tooltip-success"
-																		data-bs-title="Excel">
-																		<i class="bi bi-download"></i>
-																	</button>
-																</a>
-																<a href="/departmentPdf">
-																	<button class="btn btn-outline-info btn-sm"
-																		data-bs-toggle="tooltip" data-bs-placement="top"
-																		data-bs-custom-class="custom-tooltip-info"
-																		data-bs-title="Pdf">
-																		<i class="bi bi-download"></i>
-																	</button>
-																</a>
-															</td>
-														</tr>
-
-													</tbody>
-												</table>
-											</div>
-										</div>
+										<span th:each="imgName : ${imgList}">
+											<a href="@{'/image/'+${imgName}}">
+												<img th:src="@{'/image/'+${imgName}}" width="282" height="320" class="p-2">
+											</a>
+										</span>
 									</div>
 								</div>
 							</div>
@@ -224,12 +169,6 @@
 
 	</div>
 	<!-- Page wrapper end -->
-	<script src="assets/vendor/overlay-scroll/table.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('#myTable').DataTable();
-		});
-	</script>
 
 	<!-- ************* JavaScript Files *************-->
 	<!-- Required jQuery first, then Bootstrap Bundle JS -->
@@ -244,7 +183,7 @@
 
 	<!-- Custom JS files -->
 	<script src="assets/js/custom.js"></script>
-	
+
 </body>
 
 </html>

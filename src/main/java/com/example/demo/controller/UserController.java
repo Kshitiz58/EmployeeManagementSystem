@@ -108,7 +108,7 @@ public class UserController {
 	
 	@GetMapping("/forgetpass")
 	public String getForgetPassword() {
-		return "login";
+		return "ForgetPassword";
 	}
 	
 	@PostMapping("/forgetpass")
@@ -116,7 +116,7 @@ public class UserController {
 		
 		mailUtil.SendEmail(mail);
 		
-		return "login";
+		return "redirect:/forgetpass";
 	}
 	
 	@GetMapping("/resetpass")

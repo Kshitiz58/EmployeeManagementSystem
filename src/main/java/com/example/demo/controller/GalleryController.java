@@ -26,7 +26,7 @@ public class GalleryController {
 	@GetMapping("/upload")
 	public String getUpload() {
 		
-		return "upload";
+		return "Upload";
 		
 	}
 	
@@ -39,7 +39,7 @@ public class GalleryController {
 			 return "upload";
 		}
 		model.addAttribute("message","Image Upload Failed!!");
-		return "upload";
+		return "redirect:/upload";
 	}
 
 }
