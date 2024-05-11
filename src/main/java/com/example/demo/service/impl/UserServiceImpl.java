@@ -32,11 +32,12 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public void resetUser(User user) {
+	public void saveUser(User user) {
+	        userRepo.save(user);
+	    
 		
-		userRepo.save(user);
 	}
-	
+
 	
 
 	

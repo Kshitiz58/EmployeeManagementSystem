@@ -7,13 +7,12 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
 
-
-
 @Component
 public class MailUtlis {
 
 	@Autowired
 	private JavaMailSender javaMailSender;
+	
 	
 	public void sendEmail(String toEmail, String subject, String message) {
 		SimpleMailMessage mail = new SimpleMailMessage();
@@ -46,14 +45,16 @@ public class MailUtlis {
 //	}
 	
 	public void SendEmail(String toEmail) {
-		SimpleMailMessage msg = new SimpleMailMessage();
-		msg.setTo(toEmail);
-		msg.setSubject("Your New Password!!");
-		msg.setText("Here is your new password : "+UUID.randomUUID().toString().substring(0,3));
+		SimpleMailMessage message = new SimpleMailMessage();
+		message.setTo(toEmail);
+		message.setSubject("Password reset Link.");
+//		message.setText("Here is your new password : "+UUID.randomUUID().toString().substring(0,3));
 		
-//		String resetLink = "http://localhost/reset";
-//		msg.setText("To reset password, Please click here : "+resetLink);
+		String resetLink = "http://localhost:9090/resetpassword";
+		message.setText("To reset password, Please click here : "+resetLink+" Here is your reset token : "
+				+ ""+UUID.randomUUID().toString().substring(0,6));
 		
-		javaMailSender.send(msg);
+		
+		javaMailSender.send(message);
 	}
 }

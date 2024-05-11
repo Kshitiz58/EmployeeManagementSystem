@@ -10,5 +10,6 @@ public interface UserService {
 	
 	User isUserExist(String un);
 	
-	void resetUser(User user);
+	void saveUser(User user);
+
 }

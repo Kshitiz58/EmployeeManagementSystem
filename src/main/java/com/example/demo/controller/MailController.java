@@ -15,7 +15,7 @@ import com.example.demo.utlis.MailUtlis;
 public class MailController {
 
 	@Autowired
-	MailUtlis mailUtil;
+	private MailUtlis mailUtil;
 
 	@GetMapping("/mail")
 	public String getUpload() {

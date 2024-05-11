@@ -106,28 +106,30 @@ public class UserController {
 		return "Profile";
 	}
 	
-	@GetMapping("/forgetpass")
+	@GetMapping("/forgetpassword")
 	public String getForgetPassword() {
 		return "ForgetPassword";
 	}
 	
-	@PostMapping("/forgetpass")
-	public String postForgetPassword(@RequestParam String mail) {
+	@PostMapping("/forgetpassword")
+	public String postForgetPassword(@RequestParam String email) {
 		
-		mailUtil.SendEmail(mail);
+		mailUtil.SendEmail(email);
 		
-		return "redirect:/forgetpass";
+		return "redirect:/login";
 	}
 	
-	@GetMapping("/resetpass")
+	@GetMapping("/resetpassword")
 	public String resetPassword() {
-		return "";
+		return "ResetPassword";
 	}
 	
-	@PostMapping("/resetpass")
-	public String psotResetPassword() {
+	@PostMapping("/resetpassword")
+	public String postResetPassword(@ModelAttribute User user, @RequestParam String username, @RequestParam String password, Model model) {
 		
-		return "";
+		//find by username
+		User user = service.isU
+		return "redirect:/login";
 	}
 	
 	
