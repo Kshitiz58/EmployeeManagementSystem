@@ -84,9 +84,7 @@ public class UserController {
 		}
 		logger.info("User Singnup Success.");
 		user.setPassword(DigestUtils.md5DigestAsHex(user.getPassword().getBytes()));
-		
 		service.userSignup(user);
-		logger.info("User Singnup Success.");
 		return "redirect:/login";
 
 	}
@@ -112,11 +110,10 @@ public class UserController {
 	}
 	
 	@PostMapping("/forgetpassword")
-	public String postForgetPassword(@RequestParam String email) {
-		
+	public String postForgetPassword(@RequestParam String email, Model model) {
 		mailUtil.SendEmail(email);
-		
-		return "redirect:/login";
+		model.addAttribute("message","Link forwarded successfully, go to your email.");
+		return "ForgetPassword";
 	}
 	
 	@GetMapping("/resetpassword")
@@ -125,13 +122,27 @@ public class UserController {
 	}
 	
 	@PostMapping("/resetpassword")
-	public String postResetPassword(@ModelAttribute User user, @RequestParam String username, @RequestParam String password, Model model) {
+	public String postResetPassword(Model model,@RequestParam String username, 
+			@RequestParam String password, @RequestParam String confirmPassword) {
 		
-		//find by username
-		User user = service.isU
-		return "redirect:/login";
-	}
-	
+		//Check if the password match
+		if (!password.equals(confirmPassword)) {
+	        model.addAttribute("message", "Password mismatch, Type same password.");
+	        return "ResetPassword";
+	    }
+		//Check if the user exist in the database.
+		User user = service.isUserExist(username);
+	    if (user == null) {
+	    	logger.info("User not found in the database.");
+	    	model.addAttribute("message", "User not exist, Please select valid username.");
+	        return "ResetPassword";
+	    }
+	    // Update the password
+	    user.setPassword(DigestUtils.md5DigestAsHex(password.getBytes()));
+	    service.saveUser(user);
+	    logger.info("Password changed successfully!!");
+	    return "redirect:/login";
+	}	
 	
 
 	
