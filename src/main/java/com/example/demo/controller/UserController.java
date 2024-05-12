@@ -127,7 +127,7 @@ public class UserController {
 		
 		//Check if the password match
 		if (!password.equals(confirmPassword)) {
-	        model.addAttribute("message", "Password mismatch, Type same password.");
+	        model.addAttribute("message", "Password mismatch, type same password.");
 	        return "ResetPassword";
 	    }
 		//Check if the user exist in the database.
