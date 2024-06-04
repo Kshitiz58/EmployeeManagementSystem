@@ -17,7 +17,7 @@ public class IndexController {
 	
 	@GetMapping({"/","/index"})
 	public String getIndex() {
-		return "index";
+		return "index1";
 	}
 	@PostMapping({"/","/index"})
 	public String subsribe(@ModelAttribute Subscriber subscribe) {

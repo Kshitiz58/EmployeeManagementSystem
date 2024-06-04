@@ -2,13 +2,13 @@ package com.example.demo.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.demo.model.User;
+import com.example.demo.model.MyUser;
 
 
-public interface UserRepository extends JpaRepository<User, Integer>{
+public interface UserRepository extends JpaRepository<MyUser, Integer>{
 	
-	User findByUsernameAndPassword(String un, String psw);
+	MyUser findByUsernameAndPassword(String un, String psw);
 	
-	User findByUsername(String un);
+	MyUser findByUsername(String un);
 	
 }

@@ -3,7 +3,7 @@ package com.example.demo.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.User;
+import com.example.demo.model.MyUser;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
 
@@ -14,26 +14,26 @@ public class UserServiceImpl implements UserService{
 	private UserRepository userRepo;
 
 	@Override
-	public User userLogin(String un, String psw) {
+	public MyUser userLogin(String un, String psw) {
 		
 		return userRepo.findByUsernameAndPassword(un, psw);
 	}
 
 	@Override
-	public void userSignup(User user) {
-		userRepo.save(user);
+	public void userSignup(MyUser myUser) {
+		userRepo.save(myUser);
 		
 	}
 
 	@Override
-	public User isUserExist(String un) {
+	public MyUser isUserExist(String un) {
 		
 		return userRepo.findByUsername(un);
 	}
 
 	@Override
-	public void saveUser(User user) {
-	        userRepo.save(user);
+	public void saveUser(MyUser myUser) {
+	        userRepo.save(myUser);
 	    
 		
 	}

@@ -1,15 +1,15 @@
 package com.example.demo.service;
 
-import com.example.demo.model.User;
+import com.example.demo.model.MyUser;
 
 public interface UserService {
 
-	User userLogin(String un, String psw);
+	MyUser userLogin(String un, String psw);
 
-	void userSignup(User user);
+	void userSignup(MyUser myUser);
 	
-	User isUserExist(String un);
+	MyUser isUserExist(String un);
 	
-	void saveUser(User user);
+	void saveUser(MyUser myUser);
 
 }

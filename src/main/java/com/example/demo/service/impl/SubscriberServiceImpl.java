@@ -10,7 +10,8 @@ import com.example.demo.service.SubscriberService;
 @Service
 public class SubscriberServiceImpl implements SubscriberService{
 
-	@Autowired SubscriberRepository subsriberRepo;
+	@Autowired 
+	private SubscriberRepository subsriberRepo;
 	
 	@Override
 	public void subsriberEmail(Subscriber subscriber) {

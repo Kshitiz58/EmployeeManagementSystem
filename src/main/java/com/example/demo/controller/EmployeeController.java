@@ -40,7 +40,7 @@ public class EmployeeController {
 		return "redirect:/employeeAdd";
 	}
 	
-	@GetMapping("/employeeList")
+	@GetMapping("employeeList")
 	public String listEmployee(Model model) {
 
 		model.addAttribute("empList", empService.getAllEmp());

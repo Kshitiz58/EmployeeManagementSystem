@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.model.User;
+import com.example.demo.model.MyUser;
 import com.example.demo.service.UserService;
 import com.example.demo.utlis.MailUtlis;
 import com.example.demo.utlis.VerifyRecaptcha;
@@ -38,12 +38,12 @@ public class UserController {
 	}
 
 	@PostMapping("/login")
-	public String doLogin(@ModelAttribute User user, Model model, HttpSession session,
+	public String doLogin(@ModelAttribute MyUser myUser, Model model, HttpSession session,
 			@RequestParam("g-recaptcha-response") String recptCode) throws IOException {
 		
 		if (VerifyRecaptcha.verify(recptCode)) {
-			user.setPassword(DigestUtils.md5DigestAsHex(user.getPassword().getBytes()));
-			User usr = service.userLogin(user.getUsername(), user.getPassword());
+			myUser.setPassword(DigestUtils.md5DigestAsHex(myUser.getPassword().getBytes()));
+			MyUser usr = service.userLogin(myUser.getUsername(), myUser.getPassword());
 
 			if (usr != null) {
 				logger.info("User Login Successful");
@@ -72,20 +72,20 @@ public class UserController {
 	}
 
 	@PostMapping("/signup")
-	public String postSignup(@ModelAttribute User user, Model model) {
+	public String postSignup(@ModelAttribute MyUser myUser, Model model) {
 
 		//Check confirm password
 		
 		//Check duplicate user
-		if((service.isUserExist(user.getUsername()) != null)) {
+		if((service.isUserExist(myUser.getUsername()) != null)) {
 			logger.info("User already exist in database.");
 			model.addAttribute("message", "User already Exist!!, Please select another Username.");
-			return "signup";
+			return "/";
 		}
 		logger.info("User Singnup Success.");
-		user.setPassword(DigestUtils.md5DigestAsHex(user.getPassword().getBytes()));
-		service.userSignup(user);
-		return "redirect:/login";
+		myUser.setPassword(DigestUtils.md5DigestAsHex(myUser.getPassword().getBytes()));
+		service.userSignup(myUser);
+		return "redirect:/";
 
 	}
 	@GetMapping("/logout")
@@ -131,15 +131,15 @@ public class UserController {
 	        return "ResetPassword";
 	    }
 		//Check if the user exist in the database.
-		User user = service.isUserExist(username);
-	    if (user == null) {
+		MyUser myUser = service.isUserExist(username);
+	    if (myUser == null) {
 	    	logger.info("User not found in the database.");
 	    	model.addAttribute("message", "User not exist, Please select valid username.");
 	        return "ResetPassword";
 	    }
 	    // Update the password
-	    user.setPassword(DigestUtils.md5DigestAsHex(password.getBytes()));
-	    service.saveUser(user);
+	    myUser.setPassword(DigestUtils.md5DigestAsHex(password.getBytes()));
+	    service.saveUser(myUser);
 	    logger.info("Password changed successfully!!");
 	    return "redirect:/login";
 	}	
