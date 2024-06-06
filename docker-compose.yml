@@ -1,0 +1,59 @@
+version: 4.30.0
+services:
+  #mysql:
+  # image: mysql:latest
+  # restart: always
+  # container_name: mysql1
+  # environment: 
+   # MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+   #ports:
+   # - 3307:3306
+   #volumes:
+    #- mysql-data:/var/lib/mysql
+   #networks:
+    #- mysql
+   #healthcheck:
+    #test: ["CMD-SHELL","mysqladmin ping -uroot -p${MYSQL_ROOT_PASSWORD}"]
+    #interval: 30s
+    #timeout: 10s
+    #retries: 5
+   #deploy:
+    #resources:
+     #limits:
+      #cpus: '0.5'
+      #memory: 512M
+   
+  ems:
+   image: emscomweb
+   build: .
+   container_name: emscomweb
+   restart: always
+   ports:
+    - 9090:9090
+   #depends_on: 
+    #- mysql
+   networks:
+    - mysql
+   environment: 
+    SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/emsdb?createDatabaseIfNotExist = true
+    SPRING_DATASOURCE_USERNAME: root
+    SPRING_DATASOURCE_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+   healthcheck:
+    test: ["CMD-SHELL","curl -f http://localhost:9090 || exit 1"]
+    interval: 30s
+    timeout: 10s
+    retries: 5
+   deploy:
+    resources:
+     limits:
+      cpus: '1.0'
+      memory: 1G
+    
+networks:
+  mysql:
+   external: true
+
+#volumes:
+ #mysql-data: 
+  
+   
