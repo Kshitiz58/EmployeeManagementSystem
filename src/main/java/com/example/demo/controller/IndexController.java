@@ -17,12 +17,12 @@ public class IndexController {
 	
 	@GetMapping({"/","/index"})
 	public String getIndex() {
-		return "index1";
+		return "index";
 	}
 	@PostMapping({"/","/index"})
 	public String subsribe(@ModelAttribute Subscriber subscribe) {
 		subService.subsriberEmail(subscribe);
-		return "redirect:/index";
+		return "redirect:/";
 		
 	}
 	

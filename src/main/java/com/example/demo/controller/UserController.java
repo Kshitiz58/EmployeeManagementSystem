@@ -80,12 +80,12 @@ public class UserController {
 		if((service.isUserExist(myUser.getUsername()) != null)) {
 			logger.info("User already exist in database.");
 			model.addAttribute("message", "User already Exist!!, Please select another Username.");
-			return "/";
+			return "/signup";
 		}
 		logger.info("User Singnup Success.");
 		myUser.setPassword(DigestUtils.md5DigestAsHex(myUser.getPassword().getBytes()));
 		service.userSignup(myUser);
-		return "redirect:/";
+		return "redirect:/login";
 
 	}
 	@GetMapping("/logout")
