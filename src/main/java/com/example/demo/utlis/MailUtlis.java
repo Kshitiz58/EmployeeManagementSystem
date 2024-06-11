@@ -30,7 +30,7 @@ public class MailUtlis {
 		message.setTo(toEmail);
 		message.setSubject("Password reset Link.");
 //		message.setText("Here is your new password : "+UUID.randomUUID().toString().substring(0,3));
-		String resetLink = "http://localhost:9090/resetpassword";
+		String resetLink = "https://employeemanagementsystem.up.railway.app/resetpassword";
 		message.setText("To reset your password, Please follow the link : "+resetLink+ 
 				"\n\n\nRegards,\nEMS\nKathmandu, Nepal");
 		

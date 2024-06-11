@@ -5,15 +5,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Column;
 
 @Entity
-@Table(name="subsriber_tbl")
+@Table(name="subscriber_tbl")
 public class Subscriber {
 
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	@Column(unique = true)
 	private String email;
 	
 	public int getId() {
