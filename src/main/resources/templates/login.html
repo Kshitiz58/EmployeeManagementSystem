@@ -35,21 +35,15 @@
 						<form method="post" action="/login" class="register-form" id="login-form">
 
 							<p style="color:red">[[${message}]]</p>
+							<p style="color:darkgreen">[[${message2}]]</p>
 							<div class="form-group">
 								<label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
-								<input type="text" name="username" id="username" placeholder="Your Name" required />
+								<input type="text" name="username" id="username" placeholder="Userame" required />
 							</div>
 							<div class="form-group">
 								<label for="password"><i class="zmdi zmdi-lock"></i></label>
 								<input type="password" name="password" id="password" placeholder="Password" required />
 							</div>
-
-							<div>
-								<p>
-									<a href="/forgetpassword">Forget Password</a>
-								</p>
-							</div>
-
 							<!--<div class="g-recaptcha" data-sitekey="6LcNy8YpAAAAAGuMQfKwMm_B3uX-5TpMEiMbT0Cr"></div>-->
 							<div class="g-recaptcha" data-sitekey="6Le5a_QpAAAAANLnwcIUztvNdS54lN8xoI194dIM"></div>
 							<div class="form-group">
@@ -57,6 +51,11 @@
 									required />
 								<label for="remember-me" class="label-agree-term"><span><span></span></span>Remember
 									Me</label>
+							</div>
+							<div>
+								<p>
+									<a href="/forgetpassword" style="color: brown">Forget Password?</a>
+								</p>
 							</div>
 							<div class="d-flex gap-2 justify-content-start">
 								<button type="submit" value="Add" class="btn btn-primary">

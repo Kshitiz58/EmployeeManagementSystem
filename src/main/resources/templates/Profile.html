@@ -26,7 +26,7 @@
 
 			<!-- Sidebar wrapper start -->
 
-			<div th:insert="header1.html"></div>
+			<div th:insert="header.html"></div>
 			<!-- Sidebar wrapper end -->
 
 			<!-- App container starts -->
@@ -93,7 +93,7 @@
 							</a>
 							<div class="dropdown-menu dropdown-menu-end shadow-sm">
 								<div class="p-3 border-bottom mb-2">
-									<h6 class="mb-1">Kshitiz Babik</h6>
+									<h6 class="mb-1">[[${session.validateUser.name}]]</h6>
 									<p class="m-0 small opacity-50">[[${session.validateUser.username}]] - EMS</p>
 								</div>
 								<a class="dropdown-item d-flex align-items-center" href="#"><i
@@ -137,7 +137,7 @@
 											<img src="assets/images/avatar.png" alt="Admin" class="rounded-circle"
 												width="150">
 											<div class="mt-3">
-												<h4>[[${session.validateUser.fname}]] [[${session.validateUser.lname}]]</h4>
+												<h4>[[${session.validateUser.name}]]</h4>
 											</div>
 											<br>
 											<br>
@@ -150,7 +150,16 @@
 												<h6 class="mb-0">Full Name</h6>
 											</div>
 											<div class="col-sm-2 text-secondary">
-												[[${session.validateUser.fname}]] [[${session.validateUser.lname}]]
+												[[${session.validateUser.name}]]
+											</div>
+										</div>
+										<hr>
+										<div class="row">
+											<div class="col-sm-8  text-center">
+												<h6 class="mb-0">Email</h6>
+											</div>
+											<div class="col-sm-2 text-secondary">
+												[[${session.validateUser.email}]]
 											</div>
 										</div>
 										<hr>

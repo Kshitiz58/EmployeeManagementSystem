@@ -11,5 +11,7 @@ public interface UserService {
 	MyUser isUserExist(String un);
 	
 	void saveUser(MyUser myUser);
+	
+	MyUser searchEmail(String email);	
 
 }

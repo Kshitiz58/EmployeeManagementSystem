@@ -28,7 +28,7 @@
 		<div class="main-container">
 
 			<!-- Sidebar wrapper start -->
-			<div th:insert="header1.html"></div>
+			<div th:insert="header.html"></div>
 			<!-- Sidebar wrapper end -->
 
 			<!-- App container starts -->
@@ -81,7 +81,7 @@
 							</a>
 							<div class="dropdown-menu dropdown-menu-end shadow-sm">
 								<div class="p-3 border-bottom mb-2">
-									<h6 class="mb-1">[[${session.validateUser.fname}]] [[${session.validateUser.lname}]]</h6>
+									<h6 class="mb-1">[[${session.validateUser.name}]]</h6>
 									<p class="m-0 small opacity-50">[[${session.validateUser.username}]] - EMS</p>
 								</div>
 								<a class="dropdown-item d-flex align-items-center" href="/profile"><i

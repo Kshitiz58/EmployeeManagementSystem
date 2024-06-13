@@ -25,17 +25,17 @@ public class MailUtlis {
 		
 	}
 	
-	public void SendEmail(String toEmail) {
-		SimpleMailMessage message = new SimpleMailMessage();
-		message.setTo(toEmail);
-		message.setSubject("Password reset Link.");
-//		message.setText("Here is your new password : "+UUID.randomUUID().toString().substring(0,3));
-		String resetLink = "https://employeemanagementsystem.up.railway.app/resetpassword";
-		message.setText("To reset your password, Please follow the link : "+resetLink+ 
-				"\n\n\nRegards,\nEMS\nKathmandu, Nepal");
-		
-		
-		javaMailSender.send(message);
+	public void SendEmail(String toEmail, String message) {
+		SimpleMailMessage msg = new SimpleMailMessage();
+		msg.setTo(toEmail);
+		msg.setSubject("Password Verification Code.");
+		msg.setText(message);
+////		message.setText("Here is your new password : "+UUID.randomUUID().toString().substring(0,3));
+////		String resetLink = "https://employeemanagementsystem.up.railway.app/resetpassword";
+//		String resetLink = "http://localhost:9090/resetpassword";
+//		message.setText("To reset your password, Please follow the link : "+resetLink+ 
+//				"\n\n\nRegards,\nEMS\nKathmandu, Nepal");
+		javaMailSender.send(msg);
 	}
 	
 
