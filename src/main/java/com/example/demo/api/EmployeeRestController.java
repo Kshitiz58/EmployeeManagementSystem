@@ -25,11 +25,13 @@ public class EmployeeRestController {
 	@GetMapping("/api/emp/list")
 	public List<Employee> getEmployee(){
 		return empService.getAllEmp();
+
 	}
 	
 	@GetMapping("/api/emp/{id}")
 	public Employee getEmployeeById(@PathVariable Long id) {
 		return empService.getEmployeeByID(id);
+
 	}
 	
 	@PostMapping("/api/emp/add")
@@ -46,6 +48,7 @@ public class EmployeeRestController {
 	
 	@DeleteMapping("/api/emp/delete/{id}")
 	public String deleteEmployee(@PathVariable Long id) {
+
 		return empService.deleteEmployee(id);
 	}
 	

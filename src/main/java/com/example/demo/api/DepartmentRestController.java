@@ -29,6 +29,7 @@ public class DepartmentRestController {
 	
 	@GetMapping("/api/dept/{id}")
 	public Department getDepartmentById(@PathVariable int id) {
+
 		return deptService.getDepartmentById(id);
 	}
 	

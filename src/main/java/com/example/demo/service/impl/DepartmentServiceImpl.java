@@ -19,7 +19,6 @@ public class DepartmentServiceImpl implements DepartmentService{
 	@Override
 	public void addDepartment(Department department) {
 		deptRepo.save(department);
-		
 	}
 
 	@Override

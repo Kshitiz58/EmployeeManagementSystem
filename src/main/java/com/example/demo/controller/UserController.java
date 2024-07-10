@@ -82,7 +82,7 @@ public class UserController {
 			model.addAttribute("message", "User already Exist!!, Please select another Username.");
 			return "/signup";
 		}
-		logger.info("User Singnup Success.");
+		logger.info("User singin Success.");
 		myUser.setPassword(DigestUtils.md5DigestAsHex(myUser.getPassword().getBytes()));
 		service.userSignup(myUser);
 		return "redirect:/login";
